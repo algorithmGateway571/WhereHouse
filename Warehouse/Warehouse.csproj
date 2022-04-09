@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F354977B-822B-473D-9843-F659466BD297}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Warehouse</RootNamespace>
+    <AssemblyName>Warehouse</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\WeaponBoxApp\WeaponBoxApp\bin\Release\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\WeaponBoxApp\WeaponBoxApp\bin\Release\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\WeaponBoxApp\WeaponBoxApp\bin\Release\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuFormDock">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\WeaponBoxApp\WeaponBoxApp\bin\Release\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGauge">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\WeaponBoxApp\WeaponBoxApp\bin\Release\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\WeaponBoxApp\WeaponBoxApp\bin\Release\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGroupBox">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\WeaponBoxApp\WeaponBoxApp\bin\Release\Bunifu.UI.WinForms.BunifuGroupBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\WeaponBoxApp\WeaponBoxApp\bin\Release\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\WeaponBoxApp\WeaponBoxApp\bin\Release\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPages">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\WeaponBoxApp\WeaponBoxApp\bin\Release\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPanel">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\WeaponBoxApp\WeaponBoxApp\bin\Release\Bunifu.UI.WinForms.BunifuPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\WeaponBoxApp\WeaponBoxApp\bin\Release\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\WeaponBoxApp\WeaponBoxApp\bin\Release\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\WeaponBoxApp\WeaponBoxApp\bin\Release\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRating">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\WeaponBoxApp\WeaponBoxApp\bin\Release\Bunifu.UI.WinForms.BunifuRating.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\WeaponBoxApp\WeaponBoxApp\bin\Release\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSeparator">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\WeaponBoxApp\WeaponBoxApp\bin\Release\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\WeaponBoxApp\WeaponBoxApp\bin\Release\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShapes">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\WeaponBoxApp\WeaponBoxApp\bin\Release\Bunifu.UI.WinForms.BunifuShapes.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSlider">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\WeaponBoxApp\WeaponBoxApp\bin\Release\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSnackbar">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\WeaponBoxApp\WeaponBoxApp\bin\Release\Bunifu.UI.WinForms.BunifuSnackbar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\WeaponBoxApp\WeaponBoxApp\bin\Release\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToggleSwitch">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\WeaponBoxApp\WeaponBoxApp\bin\Release\Bunifu.UI.WinForms.BunifuToggleSwitch.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToolTip">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\WeaponBoxApp\WeaponBoxApp\bin\Release\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTransition">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\WeaponBoxApp\WeaponBoxApp\bin\Release\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuUserControl">
+      <HintPath>..\..\..\..\Downloads\Telegram Desktop\WeaponBoxApp\WeaponBoxApp\bin\Release\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=2.0.5.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.2.0.5\lib\net452\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=4.4.0.0, Culture=neutral, PublicKeyToken=df2a72020bd7962a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.4.4.0\lib\net452\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=5.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.5.0.0\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.5.0.2\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.5.0.0\lib\net45\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=5.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.5.0.1\lib\net461\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=5.0.0.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.5.0.2\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="API\API Models\DeliverModel.cs" />
+    <Compile Include="API\API Models\FakturaItemModel.cs" />
+    <Compile Include="API\API Models\FakturaModel.cs" />
+    <Compile Include="API\API Models\FilialModel.cs" />
+    <Compile Include="API\API Models\GroupModel.cs" />
+    <Compile Include="API\API Models\ProductModel.cs" />
+    <Compile Include="API\API Models\ProductStorageModel.cs" />
+    <Compile Include="API\API Models\ReceiveItemModel.cs" />
+    <Compile Include="API\API Models\ReceiveModel.cs" />
+    <Compile Include="API\APIServices\DeliverService.cs" />
+    <Compile Include="API\APIServices\FakturaItemService.cs" />
+    <Compile Include="API\APIServices\FakturaService.cs" />
+    <Compile Include="API\APIServices\FilialService.cs" />
+    <Compile Include="API\APIServices\GroupService.cs" />
+    <Compile Include="API\APIServices\ProductListService.cs" />
+    <Compile Include="API\APIServices\ReceiveItemService.cs" />
+    <Compile Include="API\APIServices\ReceiveService.cs" />
+    <Compile Include="API\Request.cs" />
+    <Compile Include="CRUDForms\EditQabulPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUDForms\EditQabulPage.Designer.cs">
+      <DependentUpon>EditQabulPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRUDForms\EtidFakturaPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUDForms\EtidFakturaPage.Designer.cs">
+      <DependentUpon>EtidFakturaPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRUDForms\KorzinkaPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUDForms\KorzinkaPage.Designer.cs">
+      <DependentUpon>KorzinkaPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRUDForms\MahsulotniQabulgaQushishPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUDForms\MahsulotniQabulgaQushishPage.Designer.cs">
+      <DependentUpon>MahsulotniQabulgaQushishPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRUDForms\QabulniYaratishPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUDForms\QabulniYaratishPage.Designer.cs">
+      <DependentUpon>QabulniYaratishPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRUDForms\YangiMahsulotPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CRUDForms\YangiMahsulotPage.Designer.cs">
+      <DependentUpon>YangiMahsulotPage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI Services\MenuService.cs" />
+    <Compile Include="UI Services\WaitFormFunc.cs" />
+    <Compile Include="UserControls\FacturaControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\FacturaControl.Designer.cs">
+      <DependentUpon>FacturaControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FakturaTayyorlashControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\FakturaTayyorlashControl.Designer.cs">
+      <DependentUpon>FakturaTayyorlashControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\MahsulotQabuliControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\MahsulotQabuliControl.Designer.cs">
+      <DependentUpon>MahsulotQabuliControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\mainMenuControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\mainMenuControl.Designer.cs">
+      <DependentUpon>mainMenuControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\OmbordagiMahsulotlarControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\OmbordagiMahsulotlarControl.Designer.cs">
+      <DependentUpon>OmbordagiMahsulotlarControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\MahsulotQabulViewModel.cs" />
+    <Compile Include="WaitForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaitForm.Designer.cs">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CRUDForms\EditQabulPage.resx">
+      <DependentUpon>EditQabulPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRUDForms\EtidFakturaPage.resx">
+      <DependentUpon>EtidFakturaPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRUDForms\KorzinkaPage.resx">
+      <DependentUpon>KorzinkaPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRUDForms\MahsulotniQabulgaQushishPage.resx">
+      <DependentUpon>MahsulotniQabulgaQushishPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRUDForms\QabulniYaratishPage.resx">
+      <DependentUpon>QabulniYaratishPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRUDForms\YangiMahsulotPage.resx">
+      <DependentUpon>YangiMahsulotPage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="UserControls\FacturaControl.resx">
+      <DependentUpon>FacturaControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\FakturaTayyorlashControl.resx">
+      <DependentUpon>FakturaTayyorlashControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\MahsulotQabuliControl.resx">
+      <DependentUpon>MahsulotQabuliControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\mainMenuControl.resx">
+      <DependentUpon>mainMenuControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\OmbordagiMahsulotlarControl.resx">
+      <DependentUpon>OmbordagiMahsulotlarControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WaitForm.resx">
+      <DependentUpon>WaitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\MaterialDesignThemes.4.4.0\build\MaterialDesignThemes.targets" Condition="Exists('..\packages\MaterialDesignThemes.4.4.0\build\MaterialDesignThemes.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\MaterialDesignThemes.4.4.0\build\MaterialDesignThemes.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\MaterialDesignThemes.4.4.0\build\MaterialDesignThemes.targets'))" />
+  </Target>
+</Project>
