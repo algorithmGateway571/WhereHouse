@@ -174,7 +174,7 @@
   <ItemGroup>
     <Compile Include="API\API Models\DeliverModel.cs" />
     <Compile Include="API\API Models\FakturaItemModel.cs" />
-    <Compile Include="API\API Models\FakturaModel.cs" />
+    <Compile Include="API\API Models\FakturaCreateModel.cs" />
     <Compile Include="API\API Models\FilialModel.cs" />
     <Compile Include="API\API Models\GroupModel.cs" />
     <Compile Include="API\API Models\ProductCreateModel.cs" />
@@ -267,6 +267,7 @@
     <Compile Include="UserControls\OmbordagiMahsulotlarControl.Designer.cs">
       <DependentUpon>OmbordagiMahsulotlarControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\FakturaItemViewModel.cs" />
     <Compile Include="ViewModels\MahsulotQabulViewModel.cs" />
     <Compile Include="WaitForm.cs">
       <SubType>Form</SubType>

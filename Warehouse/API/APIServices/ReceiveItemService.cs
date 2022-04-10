@@ -31,9 +31,14 @@ namespace Warehouse.API.APIServices
 
         public async void ConfirmReceive(int Id, string status)
         {
-            Uri url = new Uri(localUrl + $"receive/{Id}");
-            HttpContent httpContent = new StringContent("{\"status\":" + status + "}", Encoding.UTF8, "application/json-patch+json");
-            await _receiveItemService.PatchAsync(client, url, httpContent);
+            HttpClient patchClient = new HttpClient();
+            Uri url = new Uri(localUrl + $"receive/{Id}/");
+            patchClient.DefaultRequestHeaders.Accept.Clear();
+            patchClient.DefaultRequestHeaders.Add("Authorization", "Bearer 9d9f9a0852dde9e4bff731986ea2daa48569ba45");
+            HttpContent httpContent = new StringContent("{\"status\":" + status + "}", Encoding.UTF8, "application/json");
+            HttpResponseMessage message = await _receiveItemService.PatchAsync(patchClient, url, httpContent);
+            ReceiveModel receiveModel = await message.Content.ReadAsAsync<ReceiveModel>();
+            
         }
 
         public async Task<ReceiveItemModel> CreateReceiveItem(ReceiveItemCreateModel receiveItem)

@@ -123,7 +123,7 @@ namespace Warehouse.UserControls
         {
             if (e.KeyCode == Keys.Enter)
             {
-                string barcode = Form1.Products.Find(a => a.Barcode == searchProdDataGrid.SelectedCells[2].Value.ToString()).Barcode;
+                string barcode = Form1.Products.Find(a => a.Barcode == searchProdDataGrid.SelectedCells[4].Value.ToString()).Barcode;
                 int prodId = int.Parse(searchProdDataGrid.SelectedCells[0].Value.ToString());
                 MahsulotniQabulgaQushishPage qushishPage = new MahsulotniQabulgaQushishPage();
                 qushishPage.FillForm(this, Form1.Products.Find(a => a.Id == prodId));

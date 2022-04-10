@@ -7,6 +7,7 @@ using Warehouse.API.API_Models;
 using Warehouse.API.APIServices;
 using Warehouse.CRUDForms;
 using Warehouse.UI_Services;
+using Warehouse.ViewModels;
 
 namespace Warehouse.UserControls
 {
@@ -14,8 +15,10 @@ namespace Warehouse.UserControls
     {
         public List<ProductStorageModel> ProductList = new List<ProductStorageModel>();
         public List<FakturaItemCreateResponse> FakturaList = new List<FakturaItemCreateResponse>();
+        List<FakturaItemViewModel> fakturaItemViews = new List<FakturaItemViewModel>();
         FakturaService fakturaService = new FakturaService();
         WaitFormFunc waitForm = new WaitFormFunc();
+        int i = 0;
         FakturaItemCreateResponse createResponse { get; set; }
         public FakturaTayyorlashControl()
         {
@@ -27,21 +30,30 @@ namespace Warehouse.UserControls
         public void FillDataGrid(FakturaItemCreateResponse fakturaItemCreate)
         {
             createResponse = fakturaItemCreate;
-            FakturaList.Add(fakturaItemCreate);
-            fakturaDataGrid.DataSource = FakturaList;
-        }
-
-        private async void bunifuButton1_Click(object sender, EventArgs e)
-        {
-            FakturaCreateModel fakturaCreate = new FakturaCreateModel()
+            FakturaItemViewModel viewModel = new FakturaItemViewModel()
             {
-                Filial = Form1.Filials.Find(a => a.Name.Contains(comboFilial.SelectedItem.ToString())).Id,
-                Status = 0
+                index = i++,
+                ProdName = fakturaItemCreate.Product.Name,
+                ProdBarcode = fakturaItemCreate.Product.Barcode,
+                ProdGroup = fakturaItemCreate.Product.Group,
+                ProdPreparer = fakturaItemCreate.Product.Preparer,
+                Dollar = fakturaItemCreate.Dollar,
+                Body_dollar = fakturaItemCreate.BodyDollar,
+                Quantity = fakturaItemCreate.Quantity,
+                
             };
-            waitForm.Show();
-            FakturaCreateResponse response= await fakturaService.CreateFaktura(fakturaCreate);
-            Form1.Faktura = response;
-            waitForm.Close();
+            fakturaItemViews.Add(viewModel);
+            fakturaDataGrid.DataSource = null;
+            fakturaDataGrid.DataSource = fakturaItemViews;
+            fakturaDataGrid.Columns["index"].HeaderText = "T/r";
+            fakturaDataGrid.Columns["ProdName"].HeaderText = "Mahsulot";
+            fakturaDataGrid.Columns["ProdBarcode"].HeaderText = "Shtrix kod";
+            fakturaDataGrid.Columns["ProdGroup"].HeaderText = "Guruh";
+            fakturaDataGrid.Columns["ProdPreparer"].HeaderText = "Preparer";
+            fakturaDataGrid.Columns["Dollar"].HeaderText = "Sotish narxi $";
+            fakturaDataGrid.Columns["Body_dollar"].HeaderText = "Tan narxi $";
+            fakturaDataGrid.Columns["Quantity"].HeaderText = "Soni";
+            fakturaDataGrid.Refresh();
         }
 
         private void bunifuTextBox2_TextChanged(object sender, EventArgs e)
@@ -98,6 +110,28 @@ namespace Warehouse.UserControls
             {
                 comboFilial.Items.Add(item.Name);
             }
+        }
+
+        private async void create_btn_Click(object sender, EventArgs e)
+        {
+            FakturaCreateModel fakturaCreate = new FakturaCreateModel()
+            {
+                Filial = Form1.Filials.Find(a => a.Name.Contains(comboFilial.SelectedItem.ToString())).Id,
+                Status = 0
+            };
+            waitForm.Show();
+            FakturaCreateResponse response = await fakturaService.CreateFaktura(fakturaCreate);
+            Form1.Faktura = response;
+            waitForm.Close();
+        }
+
+        private async void send_btn_Click(object sender, EventArgs e)
+        {
+            waitForm.Show();
+            await fakturaService.ConfirmFaktura(createResponse.FakturaId, "1");
+            fakturaDataGrid.DataSource = null;
+            fakturaItemViews.Clear();
+            waitForm.Close();
         }
     }
 }

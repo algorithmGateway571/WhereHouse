@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
 using System.Threading.Tasks;
 using Warehouse.API.API_Models;
 
@@ -16,6 +17,7 @@ namespace Warehouse.API.APIServices
         private readonly Request<FakturaCreateModel> _fakturaService;
         public FakturaService()
         {
+            _fakturaService = new Request<FakturaCreateModel>("faktura");
             HttpClientHandler handler = new HttpClientHandler();
             handler.UseDefaultCredentials = true;
             ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
@@ -53,7 +55,7 @@ namespace Warehouse.API.APIServices
         {
             try
             {
-                HttpResponseMessage response = await client.GetAsync("factura/");
+                HttpResponseMessage response = await client.GetAsync("faktura?status=1");
                 string code = response.StatusCode.ToString();
                 if (response.IsSuccessStatusCode)
                 {
@@ -70,10 +72,13 @@ namespace Warehouse.API.APIServices
                 throw new Exception(ex.Message);
             }
         }
-
-        public bool PatchFaktura()
+        public async Task<FakturaCreateResponse> ConfirmFaktura(int Id, string status)
         {
-            throw new NotImplementedException();
+            Uri url = new Uri(localUrl + $"faktura/{Id}/");
+            HttpContent httpContent = new StringContent("{\"status\":" + status + "}", Encoding.UTF8, "application/json");
+            HttpResponseMessage message = await _fakturaService.PatchAsync(client, url, httpContent);
+            FakturaCreateResponse createResponse = await message.Content.ReadAsAsync<FakturaCreateResponse>();
+            return createResponse;
         }
     }
 
@@ -81,6 +86,6 @@ namespace Warehouse.API.APIServices
     {
         Task<List<FakturaCreateResponse>> GetFakturas();
         Task<FakturaCreateResponse> CreateFaktura(FakturaCreateModel fakturaModel);
-        bool PatchFaktura();
+        Task<FakturaCreateResponse> ConfirmFaktura(int Id, string status);
     }
 }

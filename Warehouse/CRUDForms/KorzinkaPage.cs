@@ -10,6 +10,7 @@ namespace Warehouse.CRUDForms
     {
         ProductStorageModel _storageModel { get; set; }
         FakturaItemService fakturaItemService = new FakturaItemService();
+        FakturaService fakturaService = new FakturaService();
         FakturaTayyorlashControl _fakturaTayyorlash { get; set; }
         WaitFormFunc waitForm = new WaitFormFunc();
 
@@ -46,7 +47,7 @@ namespace Warehouse.CRUDForms
             waitForm.Show();
             FakturaItemCreateResponse itemCreateResponse = await fakturaItemService.CreateFakturaItem(faktura);
             _fakturaTayyorlash.FillDataGrid(itemCreateResponse);
-            fakturaItemService.ConfirmFaktura(itemCreateResponse.FakturaId, "1");
+            //await fakturaService.ConfirmFaktura(itemCreateResponse.FakturaId, "1");
             waitForm.Close();
             Close();
 

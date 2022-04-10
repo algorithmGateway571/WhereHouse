@@ -22,6 +22,9 @@ namespace Warehouse.API.API_Models
         public double Dollar { get; set; }
         [JsonProperty("sotish_dollar")]
         public double SotishDollar { get; set; }
+        [JsonProperty("ombor")]
+        public bool Ombor { get; set; }
+
 
     }
     public class ProductCreateResponse

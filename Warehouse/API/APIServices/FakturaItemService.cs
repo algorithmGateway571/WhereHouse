@@ -29,13 +29,6 @@ namespace Warehouse.API.APIServices
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        public async void ConfirmFaktura(int Id, string status)
-        {
-            Uri url = new Uri(localUrl + $"receive/{Id}");
-            HttpContent httpContent = new StringContent("{\"status\":" + status + "}", Encoding.UTF8, "application/json-patch+json");
-            await _fakturaRequest.PatchAsync(client, url, httpContent);
-        }
-
         public async Task<FakturaItemCreateResponse> CreateFakturaItem(FakturaItemModel fakturaItem)
         {
             try
@@ -62,7 +55,7 @@ namespace Warehouse.API.APIServices
         {
             try
             {
-                HttpResponseMessage response = await client.GetAsync("factura/");
+                HttpResponseMessage response = await client.GetAsync("faktura/");
                 string code = response.StatusCode.ToString();
                 if (response.IsSuccessStatusCode)
                 {
@@ -84,6 +77,5 @@ namespace Warehouse.API.APIServices
     {
         Task<List<FakturaItemCreateResponse>> GetFakturaItems();
         Task<FakturaItemCreateResponse> CreateFakturaItem(FakturaItemModel fakturaItem);
-        void ConfirmFaktura(int Id, string status);
     }
 }

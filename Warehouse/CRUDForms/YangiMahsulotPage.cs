@@ -44,6 +44,7 @@ namespace Warehouse.CRUDForms
                     Barcode = txtBarcode.Text,
                     Dollar = double.Parse(txtDollar.Text),
                     SotishDollar = double.Parse(txtSotishDollar.Text),
+                    Ombor = true,
                 };
                 ProductCreateResponse createResponse = await listProductService.CreateProduct(createModel);
                 MahsulotQabulViewModel qabulViewModel = new MahsulotQabulViewModel()
@@ -55,7 +56,7 @@ namespace Warehouse.CRUDForms
                     ProdGroup = createResponse.Group,
                     Dollar = createResponse.Dollar,
                     SotishDollar = createResponse.SotishDollar,
-                    Quantity = createResponse.Quantity
+                    Quantity = double.Parse(txtQuantity.Text)
                 };
 
                 qabuliControl.FillDataGrid(qabulViewModel);
@@ -70,18 +71,20 @@ namespace Warehouse.CRUDForms
                     Barcode = txtBarcode.Text,
                     Dollar = double.Parse(txtDollar.Text),
                     SotishDollar = double.Parse(txtSotishDollar.Text),
+                    Ombor = true,
+                   
                 };
                 ProductCreateResponse createResponse = await listProductService.CreateProduct(createModel);
                 MahsulotQabulViewModel qabulViewModel = new MahsulotQabulViewModel()
                 {
                     Receiveid = Form1.ReceiveItemModel.Receive,
-                    ProdName = createResponse.Name,
-                    ProdBarcode = createResponse.Barcode,
-                    ProdDeliver = createResponse.Preparer,
+                    ProdName = createModel.Name,
+                    ProdBarcode = createModel.Barcode,
+                    ProdDeliver = createModel.Preparer,
                     ProdGroup = createResponse.Group,
-                    Dollar = createResponse.Dollar,
-                    SotishDollar = createResponse.SotishDollar,
-                    Quantity = createResponse.Quantity
+                    Dollar = createModel.Dollar,
+                    SotishDollar = createModel.SotishDollar,
+                    Quantity = double.Parse(txtQuantity.Text)
                 };
 
                 qabuliControl.FillDataGrid(qabulViewModel);
