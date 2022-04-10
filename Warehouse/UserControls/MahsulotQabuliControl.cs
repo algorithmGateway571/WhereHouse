@@ -152,7 +152,7 @@ namespace Warehouse.UserControls
         {
             if(Form1.ReceiveItemModel.Receive == 0)
             {
-                MessageBox.Show("Кабул бошланмаган, Илтимос аввал 'Кабулни бошлаш' тугмасини босинг!", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Qabul boshlanmagan, Iltimos avval 'Qabulni boshlash' tugmasini bosing!", "Xatolik!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             EditQabulPage editQabul = new EditQabulPage();
@@ -166,6 +166,11 @@ namespace Warehouse.UserControls
             receiveDataGrid.DataSource = null;
             btnQabul.Enabled = true;
             
+        }
+
+        private void bunifuButton4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

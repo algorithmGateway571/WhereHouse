@@ -1081,6 +1081,7 @@ namespace Warehouse.UserControls
             this.edit_btn.TextMarginLeft = 0;
             this.edit_btn.TextPadding = new System.Windows.Forms.Padding(0);
             this.edit_btn.UseDefaultRadiusAndThickness = true;
+            this.edit_btn.Click += new System.EventHandler(this.edit_btn_Click);
             // 
             // delete_btn
             // 

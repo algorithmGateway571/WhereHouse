@@ -10,6 +10,7 @@ namespace Warehouse.CRUDForms
 {
     public partial class YangiMahsulotPage : Form
     {
+        int firstBarcode = 571632;
         ProductListService listProductService = new ProductListService();
         public string last_barcode = "", faktura_id;
         GroupService groupService = new GroupService();
@@ -106,7 +107,7 @@ namespace Warehouse.CRUDForms
 
         private void pictureBox1_Click(object sender, System.EventArgs e)
         {
-
+            txtBarcode.Text = txtName.Text[0].ToString() + (firstBarcode++).ToString();
         }
     }
 }

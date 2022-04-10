@@ -20,7 +20,7 @@ namespace Warehouse.UserControls
         FakturaService fakturaService = new FakturaService();
         WaitFormFunc waitForm = new WaitFormFunc();
         List<FakturaItemModel> _fakturaItemModels = new List<FakturaItemModel>();
-        List<FakturaCreateModel> _fakturaModels = new List<FakturaCreateModel>();
+        List<FakturaCreateResponse> _fakturaModels = new List<FakturaCreateResponse>();
         int i = 1 ;
         FakturaItemCreateResponse createResponse { get; set; }
         public FakturaTayyorlashControl()
@@ -32,7 +32,7 @@ namespace Warehouse.UserControls
 
         public void FillDataGrid(FakturaItemViewModel fakturaItemView)
         {
-
+            
             FakturaItemModel faktura = new FakturaItemModel()
             {
                 FakturaId = Form1.Faktura.Id,
@@ -127,6 +127,11 @@ namespace Warehouse.UserControls
 
         private async void create_btn_Click(object sender, EventArgs e)
         {
+            if(comboFilial.SelectedItem == null)
+            {
+                MessageBox.Show("Iltimos filialni tanlang", "Xatolik!", MessageBoxButtons.OK);
+                return;
+            }
             FakturaCreateModel fakturaCreate = new FakturaCreateModel()
             {
                 Filial = Form1.Filials.Find(a => a.Name.Contains(comboFilial.SelectedItem.ToString())).Id,
@@ -134,6 +139,7 @@ namespace Warehouse.UserControls
             };
             waitForm.Show();
             FakturaCreateResponse response = await fakturaService.CreateFaktura(fakturaCreate);
+            _fakturaModels.Add(response);
             Form1.Faktura = response;
             waitForm.Close();
         }
@@ -155,6 +161,7 @@ namespace Warehouse.UserControls
 
         private void save_btn_Click(object sender, EventArgs e)
         {
+            
             savedFakturaDataGrid.DataSource = _fakturaModels;
             savedFakturaDataGrid.Columns["Id"].Visible = false;
             savedFakturaDataGrid.Columns["Filial"].HeaderText = "Filial";
@@ -172,6 +179,53 @@ namespace Warehouse.UserControls
             SavedFakturaItemDataGrid.Columns["Quantity"].HeaderText = "Soni";
             SavedFakturaItemDataGrid.Refresh();
             tabControl1.SelectedIndex = 1;
+        }
+
+        private void edit_btn_Click(object sender, EventArgs e)
+        {
+            string barcode = fakturaDataGrid.SelectedCells[2].Value.ToString();
+            FakturaItemViewModel fakturaItem = fakturaItemViews.Where(a => a.ProdBarcode.Contains(barcode)).Last();
+            EtidFakturaPage editFaktura = new EtidFakturaPage();
+            editFaktura.FillEditForm(this, fakturaItem);
+            editFaktura.ShowDialog();
+        }
+
+        public void EditDataGridItem(FakturaItemViewModel fakturaItemView)
+        {
+            //fakturaDataGrid.DataSource = null;
+
+            //FakturaItemModel faktura = new FakturaItemModel()
+            //{
+            //    FakturaId = Form1.Faktura.Id,
+            //    ProductBarcode = fakturaItemView.ProdBarcode,
+            //    BodyDollar = fakturaItemView.Body_dollar,
+            //    Dollar = fakturaItemView.Dollar,
+            //    Quantity = fakturaItemView.Quantity,
+            //};
+            //FakturaItemViewModel viewModel = new FakturaItemViewModel()
+            //{
+            //    ProdName = fakturaItemView.ProdName,
+            //    ProdBarcode = fakturaItemView.ProdBarcode,
+            //    ProdGroup = fakturaItemView.ProdGroup,
+            //    ProdPreparer = fakturaItemView.ProdPreparer,
+            //    Dollar = fakturaItemView.Dollar,
+            //    Body_dollar = fakturaItemView.Body_dollar,
+            //    Quantity = fakturaItemView.Quantity,
+
+            //};
+            //_fakturaItemModels.Add(faktura);
+            //fakturaItemViews.Add(viewModel);
+            //fakturaDataGrid.DataSource = fakturaItemViews;
+            //fakturaDataGrid.Columns["index"].HeaderText = "T/r";
+            //fakturaDataGrid.Columns["ProdName"].HeaderText = "Mahsulot";
+            //fakturaDataGrid.Columns["ProdBarcode"].HeaderText = "Shtrix kod";
+            //fakturaDataGrid.Columns["ProdGroup"].HeaderText = "Guruh";
+            //fakturaDataGrid.Columns["ProdPreparer"].HeaderText = "Preparer";
+            //fakturaDataGrid.Columns["Dollar"].HeaderText = "Sotish narxi $";
+            //fakturaDataGrid.Columns["Body_dollar"].HeaderText = "Tan narxi $";
+            //fakturaDataGrid.Columns["Quantity"].HeaderText = "Soni";
+
+            //fakturaDataGrid.Refresh();
         }
     }
 }

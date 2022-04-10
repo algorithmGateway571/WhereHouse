@@ -6,6 +6,7 @@ using System.Drawing.Printing;
 using System.Linq;
 using System.Windows.Forms;
 using Warehouse.API.API_Models;
+using Warehouse.API.APIServices;
 
 namespace Warehouse.UserControls
 {
@@ -13,7 +14,9 @@ namespace Warehouse.UserControls
     {
         BarcodeLib.Barcode barCode = new BarcodeLib.Barcode();
 
+        ProductListService productListService = new ProductListService();
         public List<ProductStorageModel> ProductList = new List<ProductStorageModel>();
+        WaitForm waitForm = new WaitForm();
         public OmbordagiMahsulotlarControl()
         {
             InitializeComponent();
@@ -115,7 +118,17 @@ namespace Warehouse.UserControls
 
         private void OmbordagiMahsulotlarControl_Load(object sender, EventArgs e)
         {
-            
+            GetProductsList();
+        }
+
+        private async void GetProductsList()
+        {
+            waitForm.Show();
+            mahsulotDataGrid.DataSource = null;
+            Form1.Products = await productListService.GetProducts();
+            mahsulotDataGrid.DataSource = Form1.Products;
+            mahsulotDataGrid.Refresh();
+            waitForm.Close();
         }
 
         private void bunifuButton2_Click(object sender, EventArgs e)
