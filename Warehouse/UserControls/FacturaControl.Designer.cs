@@ -34,7 +34,6 @@ namespace Warehouse.UserControls
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -48,17 +47,15 @@ namespace Warehouse.UserControls
             this.panel6 = new System.Windows.Forms.Panel();
             this.search_filial_txt = new Bunifu.UI.WinForms.BunifuTextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.bunifuButton8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.panel8 = new System.Windows.Forms.Panel();
             this.FakturaDataGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.panel9 = new System.Windows.Forms.Panel();
             this.FakturaItemDataGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
+            this.historyType_comboBox = new Bunifu.UI.WinForms.BunifuDropdown();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel7.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.FakturaDataGrid)).BeginInit();
             this.panel9.SuspendLayout();
@@ -71,18 +68,16 @@ namespace Warehouse.UserControls
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel2.Controls.Add(this.panel1, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.panel6, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.panel7, 0, 4);
             this.tableLayoutPanel2.Controls.Add(this.panel8, 0, 2);
             this.tableLayoutPanel2.Controls.Add(this.panel9, 0, 3);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 5;
+            this.tableLayoutPanel2.RowCount = 4;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 40.13378F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 59.86622F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1242, 739);
             this.tableLayoutPanel2.TabIndex = 1;
@@ -125,6 +120,7 @@ namespace Warehouse.UserControls
             // 
             // panel6
             // 
+            this.panel6.Controls.Add(this.historyType_comboBox);
             this.panel6.Controls.Add(this.search_filial_txt);
             this.panel6.Controls.Add(this.pictureBox2);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -198,7 +194,7 @@ namespace Warehouse.UserControls
             this.search_filial_txt.SelectionLength = 0;
             this.search_filial_txt.SelectionStart = 0;
             this.search_filial_txt.ShortcutsEnabled = true;
-            this.search_filial_txt.Size = new System.Drawing.Size(1180, 31);
+            this.search_filial_txt.Size = new System.Drawing.Size(280, 31);
             this.search_filial_txt.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.search_filial_txt.TabIndex = 1;
             this.search_filial_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -220,111 +216,13 @@ namespace Warehouse.UserControls
             this.pictureBox2.TabIndex = 0;
             this.pictureBox2.TabStop = false;
             // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.bunifuButton8);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel7.Location = new System.Drawing.Point(3, 681);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(1236, 55);
-            this.panel7.TabIndex = 2;
-            // 
-            // bunifuButton8
-            // 
-            this.bunifuButton8.AllowAnimations = true;
-            this.bunifuButton8.AllowMouseEffects = true;
-            this.bunifuButton8.AllowToggling = false;
-            this.bunifuButton8.AnimationSpeed = 200;
-            this.bunifuButton8.AutoGenerateColors = false;
-            this.bunifuButton8.AutoRoundBorders = false;
-            this.bunifuButton8.AutoSizeLeftIcon = true;
-            this.bunifuButton8.AutoSizeRightIcon = true;
-            this.bunifuButton8.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuButton8.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
-            this.bunifuButton8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuButton8.BackgroundImage")));
-            this.bunifuButton8.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton8.ButtonText = "Bekor qilish";
-            this.bunifuButton8.ButtonTextMarginLeft = 0;
-            this.bunifuButton8.ColorContrastOnClick = 45;
-            this.bunifuButton8.ColorContrastOnHover = 45;
-            this.bunifuButton8.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.bunifuButton8.CustomizableEdges = borderEdges1;
-            this.bunifuButton8.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.bunifuButton8.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.bunifuButton8.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.bunifuButton8.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.bunifuButton8.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.bunifuButton8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.bunifuButton8.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton8.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuButton8.IconLeftCursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuButton8.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
-            this.bunifuButton8.IconMarginLeft = 11;
-            this.bunifuButton8.IconPadding = 10;
-            this.bunifuButton8.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.bunifuButton8.IconRightCursor = System.Windows.Forms.Cursors.Default;
-            this.bunifuButton8.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
-            this.bunifuButton8.IconSize = 25;
-            this.bunifuButton8.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
-            this.bunifuButton8.IdleBorderRadius = 10;
-            this.bunifuButton8.IdleBorderThickness = 1;
-            this.bunifuButton8.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
-            this.bunifuButton8.IdleIconLeftImage = null;
-            this.bunifuButton8.IdleIconRightImage = null;
-            this.bunifuButton8.IndicateFocus = false;
-            this.bunifuButton8.Location = new System.Drawing.Point(1061, 8);
-            this.bunifuButton8.Name = "bunifuButton8";
-            this.bunifuButton8.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
-            this.bunifuButton8.OnDisabledState.BorderRadius = 10;
-            this.bunifuButton8.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton8.OnDisabledState.BorderThickness = 1;
-            this.bunifuButton8.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.bunifuButton8.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.bunifuButton8.OnDisabledState.IconLeftImage = null;
-            this.bunifuButton8.OnDisabledState.IconRightImage = null;
-            this.bunifuButton8.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.bunifuButton8.onHoverState.BorderRadius = 10;
-            this.bunifuButton8.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton8.onHoverState.BorderThickness = 1;
-            this.bunifuButton8.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.bunifuButton8.onHoverState.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton8.onHoverState.IconLeftImage = null;
-            this.bunifuButton8.onHoverState.IconRightImage = null;
-            this.bunifuButton8.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
-            this.bunifuButton8.OnIdleState.BorderRadius = 10;
-            this.bunifuButton8.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton8.OnIdleState.BorderThickness = 1;
-            this.bunifuButton8.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
-            this.bunifuButton8.OnIdleState.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton8.OnIdleState.IconLeftImage = null;
-            this.bunifuButton8.OnIdleState.IconRightImage = null;
-            this.bunifuButton8.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.bunifuButton8.OnPressedState.BorderRadius = 10;
-            this.bunifuButton8.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.bunifuButton8.OnPressedState.BorderThickness = 1;
-            this.bunifuButton8.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
-            this.bunifuButton8.OnPressedState.ForeColor = System.Drawing.Color.White;
-            this.bunifuButton8.OnPressedState.IconLeftImage = null;
-            this.bunifuButton8.OnPressedState.IconRightImage = null;
-            this.bunifuButton8.Size = new System.Drawing.Size(142, 39);
-            this.bunifuButton8.TabIndex = 42;
-            this.bunifuButton8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.bunifuButton8.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
-            this.bunifuButton8.TextMarginLeft = 0;
-            this.bunifuButton8.TextPadding = new System.Windows.Forms.Padding(0);
-            this.bunifuButton8.UseDefaultRadiusAndThickness = true;
-            // 
             // panel8
             // 
             this.panel8.Controls.Add(this.FakturaDataGrid);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel8.Location = new System.Drawing.Point(3, 83);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(1236, 293);
+            this.panel8.Size = new System.Drawing.Size(1236, 258);
             this.panel8.TabIndex = 3;
             // 
             // FakturaDataGrid
@@ -384,7 +282,7 @@ namespace Warehouse.UserControls
             this.FakturaDataGrid.RowHeadersVisible = false;
             this.FakturaDataGrid.RowTemplate.Height = 40;
             this.FakturaDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.FakturaDataGrid.Size = new System.Drawing.Size(1236, 293);
+            this.FakturaDataGrid.Size = new System.Drawing.Size(1236, 258);
             this.FakturaDataGrid.TabIndex = 0;
             this.FakturaDataGrid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
@@ -392,9 +290,9 @@ namespace Warehouse.UserControls
             // 
             this.panel9.Controls.Add(this.FakturaItemDataGrid);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(3, 382);
+            this.panel9.Location = new System.Drawing.Point(3, 347);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(1236, 293);
+            this.panel9.Size = new System.Drawing.Size(1236, 389);
             this.panel9.TabIndex = 4;
             // 
             // FakturaItemDataGrid
@@ -454,9 +352,56 @@ namespace Warehouse.UserControls
             this.FakturaItemDataGrid.RowHeadersVisible = false;
             this.FakturaItemDataGrid.RowTemplate.Height = 40;
             this.FakturaItemDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.FakturaItemDataGrid.Size = new System.Drawing.Size(1236, 293);
+            this.FakturaItemDataGrid.Size = new System.Drawing.Size(1236, 389);
             this.FakturaItemDataGrid.TabIndex = 0;
             this.FakturaItemDataGrid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            // 
+            // historyType_comboBox
+            // 
+            this.historyType_comboBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.historyType_comboBox.BackColor = System.Drawing.Color.Transparent;
+            this.historyType_comboBox.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(34)))), ((int)(((byte)(59)))));
+            this.historyType_comboBox.BorderColor = System.Drawing.Color.Silver;
+            this.historyType_comboBox.BorderRadius = 8;
+            this.historyType_comboBox.Color = System.Drawing.Color.Silver;
+            this.historyType_comboBox.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.historyType_comboBox.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.historyType_comboBox.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.historyType_comboBox.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.historyType_comboBox.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.historyType_comboBox.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.historyType_comboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.historyType_comboBox.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.historyType_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.historyType_comboBox.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.historyType_comboBox.FillDropDown = true;
+            this.historyType_comboBox.FillIndicator = false;
+            this.historyType_comboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.historyType_comboBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.historyType_comboBox.ForeColor = System.Drawing.Color.White;
+            this.historyType_comboBox.FormattingEnabled = true;
+            this.historyType_comboBox.Icon = null;
+            this.historyType_comboBox.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.historyType_comboBox.IndicatorColor = System.Drawing.Color.Gray;
+            this.historyType_comboBox.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.historyType_comboBox.ItemBackColor = System.Drawing.Color.White;
+            this.historyType_comboBox.ItemBorderColor = System.Drawing.Color.White;
+            this.historyType_comboBox.ItemForeColor = System.Drawing.Color.Black;
+            this.historyType_comboBox.ItemHeight = 26;
+            this.historyType_comboBox.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
+            this.historyType_comboBox.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.historyType_comboBox.Items.AddRange(new object[] {
+            "Faktura history",
+            "Mahsulot qabul history"});
+            this.historyType_comboBox.ItemTopMargin = 3;
+            this.historyType_comboBox.Location = new System.Drawing.Point(950, 0);
+            this.historyType_comboBox.Name = "historyType_comboBox";
+            this.historyType_comboBox.Size = new System.Drawing.Size(271, 32);
+            this.historyType_comboBox.TabIndex = 3;
+            this.historyType_comboBox.Text = "Faktura turi";
+            this.historyType_comboBox.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.historyType_comboBox.TextLeftMargin = 5;
+            this.historyType_comboBox.SelectedIndexChanged += new System.EventHandler(this.historyType_comboBox_SelectedIndexChanged);
             // 
             // FacturaControl
             // 
@@ -472,7 +417,6 @@ namespace Warehouse.UserControls
             this.panel1.PerformLayout();
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel7.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.FakturaDataGrid)).EndInit();
             this.panel9.ResumeLayout(false);
@@ -487,8 +431,6 @@ namespace Warehouse.UserControls
         private System.Windows.Forms.Panel panel6;
         private Bunifu.UI.WinForms.BunifuTextBox search_filial_txt;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel panel7;
-        private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton8;
         private System.Windows.Forms.Panel panel8;
         private Bunifu.UI.WinForms.BunifuDataGridView FakturaDataGrid;
         private System.Windows.Forms.Panel panel9;
@@ -496,5 +438,6 @@ namespace Warehouse.UserControls
         private System.Windows.Forms.Panel panel1;
         public System.Windows.Forms.Label lblQayta;
         public System.Windows.Forms.Label lblStatus;
+        private Bunifu.UI.WinForms.BunifuDropdown historyType_comboBox;
     }
 }

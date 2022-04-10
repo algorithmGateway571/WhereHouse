@@ -16,8 +16,11 @@ namespace Warehouse.UserControls
         List<ProductStorageModel> productStorages = new List<ProductStorageModel>();
         List<ReceiveItemModel> receiveItems = new List<ReceiveItemModel>();
         List<MahsulotQabulViewModel> qabulViewModels = new List<MahsulotQabulViewModel>();
+        List<ReceiveItemCreateModel> createModelList = new List<ReceiveItemCreateModel>();
         MahsulotQabulViewModel _qabulViewModel { get; set; }
         ReceiveItemCreateModel createModel { get; set; }
+        WaitForm waitForm = new WaitForm();
+        int i = 1;
         public MahsulotQabuliControl()
         {
             InitializeComponent();
@@ -25,15 +28,21 @@ namespace Warehouse.UserControls
 
         }
 
-        
-
         public void FillDataGrid(MahsulotQabulViewModel qabulViewModel)
         {
+            qabulViewModel.Index = i++;
             _qabulViewModel = qabulViewModel;
             receiveDataGrid.DataSource = null;
-            qabulViewModels.Clear();
             qabulViewModels.Add(qabulViewModel);
             receiveDataGrid.DataSource = qabulViewModels;
+            receiveDataGrid.Columns["Index"].HeaderText = "T/r";
+            receiveDataGrid.Columns["ProdName"].HeaderText = "Mahsulot";
+            receiveDataGrid.Columns["ProdBarcode"].HeaderText = "Shtrix kod";
+            receiveDataGrid.Columns["ProdDeliver"].HeaderText = "Yetkazuvchi";
+            receiveDataGrid.Columns["ProdGroup"].HeaderText = "Guruh";
+            receiveDataGrid.Columns["Dollar"].HeaderText = "Tan narx";
+            receiveDataGrid.Columns["SotishDollar"].HeaderText = "Sotish narx";
+            receiveDataGrid.Columns["Quantity"].HeaderText = "Soni";
 
             createModel = new ReceiveItemCreateModel()
             {
@@ -43,7 +52,9 @@ namespace Warehouse.UserControls
                 SotishDollar = qabulViewModel.SotishDollar,
                 Quantity = qabulViewModel.Quantity,
             };
+            createModelList.Add(createModel);
             summaDollar_txt.Text = createModel.Dollar.ToString();
+            receiveDataGrid.Refresh();
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -107,11 +118,16 @@ namespace Warehouse.UserControls
 
         private async void bunifuButton5_Click(object sender, EventArgs e)
         {
-             itemService.ConfirmReceive(createModel.Receive, "1");
-             ReceiveItemModel itemModel = await itemService.CreateReceiveItem(createModel);
-             receiveDataGrid.DataSource = null;
-             btnQabul.Enabled = true;
+            waitForm.Show();
+            itemService.ConfirmReceive(createModel.Receive, "1");
+            foreach (var item in createModelList)
+            {
+                ReceiveItemModel itemModel = await itemService.CreateReceiveItem(item);
+            }
+            receiveDataGrid.DataSource = null;
+            btnQabul.Enabled = true;
             Form1.ReceiveItemModel.Receive = 0;
+            waitForm.Close();
         }
 
         private void searchProdDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)

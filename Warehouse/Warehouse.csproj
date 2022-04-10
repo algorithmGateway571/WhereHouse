@@ -191,6 +191,7 @@
     <Compile Include="API\APIServices\ReceiveItemService.cs" />
     <Compile Include="API\APIServices\ReceiveService.cs" />
     <Compile Include="API\Request.cs" />
+    <Compile Include="API\StaticModels.cs" />
     <Compile Include="CRUDForms\EditQabulPage.cs">
       <SubType>Form</SubType>
     </Compile>

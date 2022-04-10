@@ -15,10 +15,13 @@ namespace Warehouse.UserControls
     {
         public List<ProductStorageModel> ProductList = new List<ProductStorageModel>();
         public List<FakturaItemCreateResponse> FakturaList = new List<FakturaItemCreateResponse>();
+        FakturaItemService fakturaItemService = new FakturaItemService();
         List<FakturaItemViewModel> fakturaItemViews = new List<FakturaItemViewModel>();
         FakturaService fakturaService = new FakturaService();
         WaitFormFunc waitForm = new WaitFormFunc();
-        int i = 0;
+        List<FakturaItemModel> _fakturaItemModels = new List<FakturaItemModel>();
+        List<FakturaCreateModel> _fakturaModels = new List<FakturaCreateModel>();
+        int i = 1 ;
         FakturaItemCreateResponse createResponse { get; set; }
         public FakturaTayyorlashControl()
         {
@@ -27,21 +30,30 @@ namespace Warehouse.UserControls
 
         }
 
-        public void FillDataGrid(FakturaItemCreateResponse fakturaItemCreate)
+        public void FillDataGrid(FakturaItemViewModel fakturaItemView)
         {
-            createResponse = fakturaItemCreate;
+
+            FakturaItemModel faktura = new FakturaItemModel()
+            {
+                FakturaId = Form1.Faktura.Id,
+                ProductBarcode = fakturaItemView.ProdBarcode,
+                BodyDollar = fakturaItemView.Body_dollar,
+                Dollar = fakturaItemView.Dollar,
+                Quantity = fakturaItemView.Quantity,
+            };
             FakturaItemViewModel viewModel = new FakturaItemViewModel()
             {
                 index = i++,
-                ProdName = fakturaItemCreate.Product.Name,
-                ProdBarcode = fakturaItemCreate.Product.Barcode,
-                ProdGroup = fakturaItemCreate.Product.Group,
-                ProdPreparer = fakturaItemCreate.Product.Preparer,
-                Dollar = fakturaItemCreate.Dollar,
-                Body_dollar = fakturaItemCreate.BodyDollar,
-                Quantity = fakturaItemCreate.Quantity,
+                ProdName = fakturaItemView.ProdName,
+                ProdBarcode = fakturaItemView.ProdBarcode,
+                ProdGroup = fakturaItemView.ProdGroup,
+                ProdPreparer = fakturaItemView.ProdPreparer,
+                Dollar = fakturaItemView.Dollar,
+                Body_dollar = fakturaItemView.Body_dollar,
+                Quantity = fakturaItemView.Quantity,
                 
             };
+            _fakturaItemModels.Add(faktura);
             fakturaItemViews.Add(viewModel);
             fakturaDataGrid.DataSource = null;
             fakturaDataGrid.DataSource = fakturaItemViews;
@@ -53,6 +65,7 @@ namespace Warehouse.UserControls
             fakturaDataGrid.Columns["Dollar"].HeaderText = "Sotish narxi $";
             fakturaDataGrid.Columns["Body_dollar"].HeaderText = "Tan narxi $";
             fakturaDataGrid.Columns["Quantity"].HeaderText = "Soni";
+            
             fakturaDataGrid.Refresh();
         }
 
@@ -128,10 +141,37 @@ namespace Warehouse.UserControls
         private async void send_btn_Click(object sender, EventArgs e)
         {
             waitForm.Show();
-            await fakturaService.ConfirmFaktura(createResponse.FakturaId, "1");
+            await fakturaService.ConfirmFaktura(Form1.Faktura.Id, "1");
+            foreach (var item in _fakturaItemModels)
+            {
+                await fakturaItemService.CreateFakturaItem(item);
+            }
             fakturaDataGrid.DataSource = null;
+            Form1.Faktura = null;
+            _fakturaItemModels.Clear();
             fakturaItemViews.Clear();
             waitForm.Close();
+        }
+
+        private void save_btn_Click(object sender, EventArgs e)
+        {
+            savedFakturaDataGrid.DataSource = _fakturaModels;
+            savedFakturaDataGrid.Columns["Id"].Visible = false;
+            savedFakturaDataGrid.Columns["Filial"].HeaderText = "Filial";
+            savedFakturaDataGrid.Columns["Date"].HeaderText = "Sana";
+            savedFakturaDataGrid.Columns["Status"].HeaderText = "status";
+
+            SavedFakturaItemDataGrid.DataSource = _fakturaItemModels;
+            SavedFakturaItemDataGrid.Columns["index"].HeaderText = "T/r";
+            SavedFakturaItemDataGrid.Columns["ProdName"].HeaderText = "Mahsulot";
+            SavedFakturaItemDataGrid.Columns["ProdBarcode"].HeaderText = "Shtrix kod";
+            SavedFakturaItemDataGrid.Columns["ProdGroup"].HeaderText = "Guruh";
+            SavedFakturaItemDataGrid.Columns["ProdPreparer"].HeaderText = "Preparer";
+            SavedFakturaItemDataGrid.Columns["Dollar"].HeaderText = "Sotish narxi $";
+            SavedFakturaItemDataGrid.Columns["Body_dollar"].HeaderText = "Tan narxi $";
+            SavedFakturaItemDataGrid.Columns["Quantity"].HeaderText = "Soni";
+            SavedFakturaItemDataGrid.Refresh();
+            tabControl1.SelectedIndex = 1;
         }
     }
 }

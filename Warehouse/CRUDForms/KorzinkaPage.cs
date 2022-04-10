@@ -3,6 +3,7 @@ using Warehouse.API.API_Models;
 using Warehouse.API.APIServices;
 using Warehouse.UI_Services;
 using Warehouse.UserControls;
+using Warehouse.ViewModels;
 
 namespace Warehouse.CRUDForms
 {
@@ -36,19 +37,19 @@ namespace Warehouse.CRUDForms
 
         private async void AddFaktura_btn_Click(object sender, System.EventArgs e)
         {
-            FakturaItemModel faktura = new FakturaItemModel()
+            FakturaItemViewModel itemViewModel = new FakturaItemViewModel()
             {
-                FakturaId = Form1.Faktura.Id,
-                ProductBarcode = _storageModel.Barcode,
-                BodyDollar = _storageModel.Dollar,
-                Dollar = double.Parse(txtSoldPrice.Text),
-                Quantity = double.Parse(txtQuantity.Text),
+                ProdName = _storageModel.Name,
+                ProdBarcode = _storageModel.Barcode,
+                ProdGroup = _storageModel.Group,
+                ProdPreparer = _storageModel.Preparer,
+                Body_dollar = double.Parse(txtSoldPrice.Text),
+                Dollar = double.Parse(txtDollar.Text),
+                Quantity = double.Parse(txtQuantity.Text)
+
             };
-            waitForm.Show();
-            FakturaItemCreateResponse itemCreateResponse = await fakturaItemService.CreateFakturaItem(faktura);
-            _fakturaTayyorlash.FillDataGrid(itemCreateResponse);
+            _fakturaTayyorlash.FillDataGrid(itemViewModel);
             //await fakturaService.ConfirmFaktura(itemCreateResponse.FakturaId, "1");
-            waitForm.Close();
             Close();
 
         }

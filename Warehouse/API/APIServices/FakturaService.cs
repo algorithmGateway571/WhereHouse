@@ -12,8 +12,6 @@ namespace Warehouse.API.APIServices
     public class FakturaService : IFakturaService
     {
         private readonly HttpClient client;
-        private readonly string query;
-        string localUrl = "http://159.223.18.152:8000/api/";
         private readonly Request<FakturaCreateModel> _fakturaService;
         public FakturaService()
         {
@@ -22,10 +20,9 @@ namespace Warehouse.API.APIServices
             handler.UseDefaultCredentials = true;
             ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
             client = new HttpClient(handler);
-            //ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
-            client.BaseAddress = new Uri(localUrl);
+            client.BaseAddress = new Uri(StaticModels.BaseURL);
             client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Add("Authorization", "Bearer 9d9f9a0852dde9e4bff731986ea2daa48569ba45");
+            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {StaticModels.Token}");
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
@@ -74,7 +71,7 @@ namespace Warehouse.API.APIServices
         }
         public async Task<FakturaCreateResponse> ConfirmFaktura(int Id, string status)
         {
-            Uri url = new Uri(localUrl + $"faktura/{Id}/");
+            Uri url = new Uri(StaticModels.BaseURL + $"faktura/{Id}/");
             HttpContent httpContent = new StringContent("{\"status\":" + status + "}", Encoding.UTF8, "application/json");
             HttpResponseMessage message = await _fakturaService.PatchAsync(client, url, httpContent);
             FakturaCreateResponse createResponse = await message.Content.ReadAsAsync<FakturaCreateResponse>();
