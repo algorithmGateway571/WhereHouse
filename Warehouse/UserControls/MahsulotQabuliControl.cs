@@ -21,7 +21,10 @@ namespace Warehouse.UserControls
         {
             InitializeComponent();
             searchType_combobox.SelectedIndex = 0;
+
         }
+
+        
 
         public void FillDataGrid(MahsulotQabulViewModel qabulViewModel)
         {
@@ -29,6 +32,7 @@ namespace Warehouse.UserControls
             qabulViewModels.Clear();
             qabulViewModels.Add(qabulViewModel);
             receiveDataGrid.DataSource = qabulViewModels;
+
             createModel = new ReceiveItemCreateModel()
             {
                 Receive = qabulViewModel.Receiveid,
@@ -37,6 +41,7 @@ namespace Warehouse.UserControls
                 SotishDollar = qabulViewModel.SotishDollar,
                 Quantity = qabulViewModel.Quantity,
             };
+            summaDollar_txt.Text = createModel.Dollar.ToString();
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -47,22 +52,34 @@ namespace Warehouse.UserControls
         private void bunifuButton2_Click(object sender, EventArgs e)
         {
             QabulniYaratishPage qabulniYaratishPage = new QabulniYaratishPage();
-
             qabulniYaratishPage.ShowDialog();
+            btnQabul.Enabled = false;
         }
 
         private void bunifuButton1_Click(object sender, EventArgs e)
         {
-            if (btnQabul.Enabled)
+
+            if (Form1.ReceiveItemModel.Receive == 0 )
             {
                 MessageBox.Show("Кабул бошланмаган, Илтимос аввал 'Кабулни бошлаш' тугмасини босинг!", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
+            }
+            else
+            {
+                YangiMahsulotPage yangiMahsulot = new YangiMahsulotPage();
+                yangiMahsulot.SensReceive(this);
+                yangiMahsulot.ShowDialog();
             }
 
         }
 
         private void bunifuTextBox1_TextChanged(object sender, EventArgs e)
         {
+            if (Form1.ReceiveItemModel.Receive == 0 )
+            {
+                MessageBox.Show("Кабул бошланмаган, Илтимос аввал 'Кабулни бошлаш' тугмасини босинг!", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             searchProdDataGrid.Visible = true;
             searchProdDataGrid.DataSource = null;
             if (searchType_combobox.SelectedIndex == 0)
@@ -88,8 +105,9 @@ namespace Warehouse.UserControls
 
         private async void bunifuButton5_Click(object sender, EventArgs e)
         {
-            itemService.ConfirmReceive(createModel.Receive, "1");
-            //ReceiveItemModel itemModel = await itemService.CreateReceiveItem(createModel);
+             itemService.ConfirmReceive(createModel.Receive, "1");
+             ReceiveItemModel itemModel = await itemService.CreateReceiveItem(createModel);
+            btnQabul.Enabled = true;
         }
 
         private void searchProdDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -108,6 +126,19 @@ namespace Warehouse.UserControls
                 qushishPage.ShowDialog();
                 searchProdDataGrid.Visible = false;
             }
+        }
+
+        private void bunifuButton3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuButton6_Click(object sender, EventArgs e)
+        {
+
+            receiveDataGrid.DataSource = null;
+            btnQabul.Enabled = true;
+            
         }
     }
 }

@@ -177,6 +177,7 @@
     <Compile Include="API\API Models\FakturaModel.cs" />
     <Compile Include="API\API Models\FilialModel.cs" />
     <Compile Include="API\API Models\GroupModel.cs" />
+    <Compile Include="API\API Models\ProductCreateModel.cs" />
     <Compile Include="API\API Models\ProductModel.cs" />
     <Compile Include="API\API Models\ProductStorageModel.cs" />
     <Compile Include="API\API Models\ReceiveItemModel.cs" />

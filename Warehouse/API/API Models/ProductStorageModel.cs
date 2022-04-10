@@ -18,4 +18,5 @@ namespace Warehouse.API.API_Models
         public double Quantity { get; set; }
 
     }
+
 }

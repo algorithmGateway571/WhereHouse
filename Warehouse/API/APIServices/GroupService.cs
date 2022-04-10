@@ -13,6 +13,16 @@ namespace Warehouse.API.APIServices
             _groupService = new Request<GroupModel>("groups");
         }
 
+        public async Task<GroupModel> CreateGroup(GroupModel group)
+        {
+            if (group != null)
+            {
+                GroupModel model = await _groupService.Post("", group);
+                return model;
+            }
+            else return null;
+        }
+
         public async Task<List<GroupModel>> GetGroups()
         {
             return await _groupService.GetAll();
@@ -22,5 +32,6 @@ namespace Warehouse.API.APIServices
     public interface IGroupService
     {
         Task<List<GroupModel>> GetGroups();
+        Task<GroupModel> CreateGroup(GroupModel group);
     }
 }

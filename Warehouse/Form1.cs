@@ -15,6 +15,7 @@ namespace Warehouse
         public static List<FilialModel> Filials = new List<FilialModel>();
         public static List<ReceiveModel> receiveModels = new List<ReceiveModel>();
         public static ReceiveItemModel ReceiveItemModel = new ReceiveItemModel();
+        public static ReceiveModel Receive = new ReceiveModel();
 
         public static MenuService menuService = new MenuService();
         public static Panel mainPanelStatik;
