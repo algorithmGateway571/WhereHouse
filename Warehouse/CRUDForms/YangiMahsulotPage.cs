@@ -86,6 +86,7 @@ namespace Warehouse.CRUDForms
 
                 qabuliControl.FillDataGrid(qabulViewModel);
             }
+            this.Close();
         }
 
         private void bunifuButton1_Click(object sender, System.EventArgs e)

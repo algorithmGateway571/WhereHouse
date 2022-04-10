@@ -16,6 +16,7 @@ namespace Warehouse
         public static List<ReceiveModel> receiveModels = new List<ReceiveModel>();
         public static ReceiveItemModel ReceiveItemModel = new ReceiveItemModel();
         public static ReceiveModel Receive = new ReceiveModel();
+        public static FakturaCreateResponse Faktura = new FakturaCreateResponse();
 
         public static MenuService menuService = new MenuService();
         public static Panel mainPanelStatik;

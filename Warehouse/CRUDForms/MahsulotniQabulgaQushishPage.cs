@@ -29,7 +29,7 @@ namespace Warehouse.CRUDForms
             this.Close();
         }
 
-        private async void Add_btn_Click(object sender, EventArgs e)
+        private void Add_btn_Click(object sender, EventArgs e)
         {
 
             MahsulotQabulViewModel mahsulotQabul = new MahsulotQabulViewModel()

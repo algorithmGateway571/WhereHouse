@@ -16,6 +16,7 @@ namespace Warehouse.UserControls
         List<ProductStorageModel> productStorages = new List<ProductStorageModel>();
         List<ReceiveItemModel> receiveItems = new List<ReceiveItemModel>();
         List<MahsulotQabulViewModel> qabulViewModels = new List<MahsulotQabulViewModel>();
+        MahsulotQabulViewModel _qabulViewModel { get; set; }
         ReceiveItemCreateModel createModel { get; set; }
         public MahsulotQabuliControl()
         {
@@ -28,6 +29,7 @@ namespace Warehouse.UserControls
 
         public void FillDataGrid(MahsulotQabulViewModel qabulViewModel)
         {
+            _qabulViewModel = qabulViewModel;
             receiveDataGrid.DataSource = null;
             qabulViewModels.Clear();
             qabulViewModels.Add(qabulViewModel);
@@ -107,7 +109,9 @@ namespace Warehouse.UserControls
         {
              itemService.ConfirmReceive(createModel.Receive, "1");
              ReceiveItemModel itemModel = await itemService.CreateReceiveItem(createModel);
-            btnQabul.Enabled = true;
+             receiveDataGrid.DataSource = null;
+             btnQabul.Enabled = true;
+            Form1.ReceiveItemModel.Receive = 0;
         }
 
         private void searchProdDataGrid_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -130,7 +134,14 @@ namespace Warehouse.UserControls
 
         private void bunifuButton3_Click(object sender, EventArgs e)
         {
-
+            if(Form1.ReceiveItemModel.Receive == 0)
+            {
+                MessageBox.Show("Кабул бошланмаган, Илтимос аввал 'Кабулни бошлаш' тугмасини босинг!", "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            EditQabulPage editQabul = new EditQabulPage();
+            editQabul.FillForm(this,_qabulViewModel);
+            editQabul.ShowDialog();
         }
 
         private void bunifuButton6_Click(object sender, EventArgs e)
