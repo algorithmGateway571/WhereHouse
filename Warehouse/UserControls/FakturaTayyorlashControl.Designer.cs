@@ -76,6 +76,7 @@ namespace Warehouse.UserControls
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.searchType_comboBox = new Bunifu.UI.WinForms.BunifuDropdown();
             this.search_mahsulot_txt = new Bunifu.UI.WinForms.BunifuTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -102,7 +103,6 @@ namespace Warehouse.UserControls
             this.bunifuDataGridView1 = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.panel9 = new System.Windows.Forms.Panel();
             this.bunifuDataGridView2 = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.search_comboBox = new Bunifu.UI.WinForms.BunifuDropdown();
             this.tabControl1.SuspendLayout();
             this.Tayyorlangan_faktura.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -352,6 +352,7 @@ namespace Warehouse.UserControls
             this.comboFilial.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.comboFilial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
             this.comboFilial.Font = new System.Drawing.Font("Calibri", 15.75F);
+            this.comboFilial.ForeColor = System.Drawing.Color.White;
             this.comboFilial.FormattingEnabled = true;
             this.comboFilial.Location = new System.Drawing.Point(846, 10);
             this.comboFilial.Margin = new System.Windows.Forms.Padding(5);
@@ -387,7 +388,7 @@ namespace Warehouse.UserControls
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.search_comboBox);
+            this.panel3.Controls.Add(this.searchType_comboBox);
             this.panel3.Controls.Add(this.search_mahsulot_txt);
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -395,6 +396,52 @@ namespace Warehouse.UserControls
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1295, 54);
             this.panel3.TabIndex = 0;
+            // 
+            // searchType_comboBox
+            // 
+            this.searchType_comboBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.searchType_comboBox.BackColor = System.Drawing.Color.Transparent;
+            this.searchType_comboBox.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(34)))), ((int)(((byte)(59)))));
+            this.searchType_comboBox.BorderColor = System.Drawing.Color.Silver;
+            this.searchType_comboBox.BorderRadius = 8;
+            this.searchType_comboBox.Color = System.Drawing.Color.Silver;
+            this.searchType_comboBox.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.searchType_comboBox.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.searchType_comboBox.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.searchType_comboBox.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.searchType_comboBox.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.searchType_comboBox.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.searchType_comboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.searchType_comboBox.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.searchType_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.searchType_comboBox.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.searchType_comboBox.FillDropDown = true;
+            this.searchType_comboBox.FillIndicator = false;
+            this.searchType_comboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.searchType_comboBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.searchType_comboBox.ForeColor = System.Drawing.Color.White;
+            this.searchType_comboBox.FormattingEnabled = true;
+            this.searchType_comboBox.Icon = null;
+            this.searchType_comboBox.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.searchType_comboBox.IndicatorColor = System.Drawing.Color.Gray;
+            this.searchType_comboBox.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.searchType_comboBox.ItemBackColor = System.Drawing.Color.White;
+            this.searchType_comboBox.ItemBorderColor = System.Drawing.Color.White;
+            this.searchType_comboBox.ItemForeColor = System.Drawing.Color.Black;
+            this.searchType_comboBox.ItemHeight = 26;
+            this.searchType_comboBox.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
+            this.searchType_comboBox.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.searchType_comboBox.Items.AddRange(new object[] {
+            "Barkodi",
+            "Nomi"});
+            this.searchType_comboBox.ItemTopMargin = 3;
+            this.searchType_comboBox.Location = new System.Drawing.Point(1046, 12);
+            this.searchType_comboBox.Name = "searchType_comboBox";
+            this.searchType_comboBox.Size = new System.Drawing.Size(234, 32);
+            this.searchType_comboBox.TabIndex = 2;
+            this.searchType_comboBox.Text = "Qidirish turi";
+            this.searchType_comboBox.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.searchType_comboBox.TextLeftMargin = 5;
             // 
             // search_mahsulot_txt
             // 
@@ -461,7 +508,7 @@ namespace Warehouse.UserControls
             this.search_mahsulot_txt.SelectionLength = 0;
             this.search_mahsulot_txt.SelectionStart = 0;
             this.search_mahsulot_txt.ShortcutsEnabled = true;
-            this.search_mahsulot_txt.Size = new System.Drawing.Size(283, 30);
+            this.search_mahsulot_txt.Size = new System.Drawing.Size(376, 30);
             this.search_mahsulot_txt.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.search_mahsulot_txt.TabIndex = 1;
             this.search_mahsulot_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1108,12 +1155,15 @@ namespace Warehouse.UserControls
             this.searchDataGrid.HeaderForeColor = System.Drawing.Color.White;
             this.searchDataGrid.Location = new System.Drawing.Point(0, 0);
             this.searchDataGrid.Name = "searchDataGrid";
+            this.searchDataGrid.ReadOnly = true;
             this.searchDataGrid.RowHeadersVisible = false;
             this.searchDataGrid.RowTemplate.Height = 40;
             this.searchDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.searchDataGrid.Size = new System.Drawing.Size(1295, 224);
+            this.searchDataGrid.Size = new System.Drawing.Size(1295, 258);
             this.searchDataGrid.TabIndex = 1;
             this.searchDataGrid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
+            this.searchDataGrid.Visible = false;
+            this.searchDataGrid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.searchDataGrid_KeyDown);
             // 
             // fakturaDataGrid
             // 
@@ -1169,6 +1219,7 @@ namespace Warehouse.UserControls
             this.fakturaDataGrid.HeaderForeColor = System.Drawing.Color.White;
             this.fakturaDataGrid.Location = new System.Drawing.Point(0, 0);
             this.fakturaDataGrid.Name = "fakturaDataGrid";
+            this.fakturaDataGrid.ReadOnly = true;
             this.fakturaDataGrid.RowHeadersVisible = false;
             this.fakturaDataGrid.RowTemplate.Height = 40;
             this.fakturaDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -1281,7 +1332,7 @@ namespace Warehouse.UserControls
             this.search_filial_txt.SelectionLength = 0;
             this.search_filial_txt.SelectionStart = 0;
             this.search_filial_txt.ShortcutsEnabled = true;
-            this.search_filial_txt.Size = new System.Drawing.Size(377, 30);
+            this.search_filial_txt.Size = new System.Drawing.Size(1245, 30);
             this.search_filial_txt.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
             this.search_filial_txt.TabIndex = 1;
             this.search_filial_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -1810,52 +1861,6 @@ namespace Warehouse.UserControls
             this.bunifuDataGridView2.TabIndex = 0;
             this.bunifuDataGridView2.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
-            // search_comboBox
-            // 
-            this.search_comboBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.search_comboBox.BackColor = System.Drawing.Color.Transparent;
-            this.search_comboBox.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(34)))), ((int)(((byte)(59)))));
-            this.search_comboBox.BorderColor = System.Drawing.Color.Silver;
-            this.search_comboBox.BorderRadius = 8;
-            this.search_comboBox.Color = System.Drawing.Color.Silver;
-            this.search_comboBox.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.search_comboBox.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.search_comboBox.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.search_comboBox.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.search_comboBox.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.search_comboBox.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
-            this.search_comboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.search_comboBox.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
-            this.search_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.search_comboBox.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.search_comboBox.FillDropDown = true;
-            this.search_comboBox.FillIndicator = false;
-            this.search_comboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.search_comboBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.search_comboBox.ForeColor = System.Drawing.Color.White;
-            this.search_comboBox.FormattingEnabled = true;
-            this.search_comboBox.Icon = null;
-            this.search_comboBox.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.search_comboBox.IndicatorColor = System.Drawing.Color.Gray;
-            this.search_comboBox.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.search_comboBox.ItemBackColor = System.Drawing.Color.White;
-            this.search_comboBox.ItemBorderColor = System.Drawing.Color.White;
-            this.search_comboBox.ItemForeColor = System.Drawing.Color.Black;
-            this.search_comboBox.ItemHeight = 26;
-            this.search_comboBox.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
-            this.search_comboBox.ItemHighLightForeColor = System.Drawing.Color.White;
-            this.search_comboBox.Items.AddRange(new object[] {
-            "Barkodi",
-            "Nomi"});
-            this.search_comboBox.ItemTopMargin = 3;
-            this.search_comboBox.Location = new System.Drawing.Point(1046, 12);
-            this.search_comboBox.Name = "search_comboBox";
-            this.search_comboBox.Size = new System.Drawing.Size(234, 32);
-            this.search_comboBox.TabIndex = 2;
-            this.search_comboBox.Text = "Qidirish turi";
-            this.search_comboBox.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.search_comboBox.TextLeftMargin = 5;
-            // 
             // FakturaTayyorlashControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1933,6 +1938,6 @@ namespace Warehouse.UserControls
         private Bunifu.UI.WinForms.BunifuDataGridView bunifuDataGridView1;
         private System.Windows.Forms.Panel panel9;
         private Bunifu.UI.WinForms.BunifuDataGridView bunifuDataGridView2;
-        private Bunifu.UI.WinForms.BunifuDropdown search_comboBox;
+        private Bunifu.UI.WinForms.BunifuDropdown searchType_comboBox;
     }
 }

@@ -42,6 +42,9 @@ namespace Warehouse.UserControls
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblQayta = new System.Windows.Forms.Label();
+            this.lblStatus = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.search_filial_txt = new Bunifu.UI.WinForms.BunifuTextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -51,10 +54,8 @@ namespace Warehouse.UserControls
             this.bunifuDataGridView1 = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.panel9 = new System.Windows.Forms.Panel();
             this.bunifuDataGridView2 = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblQayta = new System.Windows.Forms.Label();
-            this.lblStatus = new System.Windows.Forms.Label();
             this.tableLayoutPanel2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel7.SuspendLayout();
@@ -62,7 +63,6 @@ namespace Warehouse.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).BeginInit();
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView2)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -86,6 +86,42 @@ namespace Warehouse.UserControls
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1242, 739);
             this.tableLayoutPanel2.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.lblQayta);
+            this.panel1.Controls.Add(this.lblStatus);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1236, 34);
+            this.panel1.TabIndex = 5;
+            // 
+            // lblQayta
+            // 
+            this.lblQayta.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.lblQayta.AutoSize = true;
+            this.lblQayta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblQayta.ForeColor = System.Drawing.Color.White;
+            this.lblQayta.Location = new System.Drawing.Point(1113, 7);
+            this.lblQayta.Name = "lblQayta";
+            this.lblQayta.Size = new System.Drawing.Size(108, 20);
+            this.lblQayta.TabIndex = 27;
+            this.lblQayta.Text = "Qayta yuklash";
+            this.lblQayta.Visible = false;
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblStatus.ForeColor = System.Drawing.Color.White;
+            this.lblStatus.Location = new System.Drawing.Point(3, 7);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(289, 20);
+            this.lblStatus.TabIndex = 26;
+            this.lblStatus.Text = "Ma\'lumotlar yuklanmoqda, Iltimos kuting";
+            this.lblStatus.Visible = false;
             // 
             // panel6
             // 
@@ -172,6 +208,7 @@ namespace Warehouse.UserControls
             this.search_filial_txt.TextPlaceholder = "Filial nomi ...";
             this.search_filial_txt.UseSystemPasswordChar = false;
             this.search_filial_txt.WordWrap = true;
+            this.search_filial_txt.TextChanged += new System.EventHandler(this.search_filial_txt_TextChanged);
             // 
             // pictureBox2
             // 
@@ -421,42 +458,6 @@ namespace Warehouse.UserControls
             this.bunifuDataGridView2.TabIndex = 0;
             this.bunifuDataGridView2.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lblQayta);
-            this.panel1.Controls.Add(this.lblStatus);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1236, 34);
-            this.panel1.TabIndex = 5;
-            // 
-            // lblQayta
-            // 
-            this.lblQayta.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.lblQayta.AutoSize = true;
-            this.lblQayta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblQayta.ForeColor = System.Drawing.Color.White;
-            this.lblQayta.Location = new System.Drawing.Point(1113, 7);
-            this.lblQayta.Name = "lblQayta";
-            this.lblQayta.Size = new System.Drawing.Size(108, 20);
-            this.lblQayta.TabIndex = 27;
-            this.lblQayta.Text = "Qayta yuklash";
-            this.lblQayta.Visible = false;
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.lblStatus.ForeColor = System.Drawing.Color.White;
-            this.lblStatus.Location = new System.Drawing.Point(3, 7);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(289, 20);
-            this.lblStatus.TabIndex = 26;
-            this.lblStatus.Text = "Ma\'lumotlar yuklanmoqda, Iltimos kuting";
-            this.lblStatus.Visible = false;
-            // 
             // FacturaControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -466,6 +467,8 @@ namespace Warehouse.UserControls
             this.Name = "FacturaControl";
             this.Size = new System.Drawing.Size(1242, 739);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel7.ResumeLayout(false);
@@ -473,8 +476,6 @@ namespace Warehouse.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView1)).EndInit();
             this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bunifuDataGridView2)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -20,7 +20,7 @@ namespace Warehouse.UserControls
         public MahsulotQabuliControl()
         {
             InitializeComponent();
-
+            searchType_combobox.SelectedIndex = 0;
         }
 
         public void FillDataGrid(MahsulotQabulViewModel qabulViewModel)
@@ -69,13 +69,20 @@ namespace Warehouse.UserControls
             {
                 productStorages = Form1.Products.Where(a => a.Barcode.Contains(search_product_txt.Text)).ToList();
                 searchProdDataGrid.DataSource = productStorages;
-                searchProdDataGrid.Columns["Id"].Visible = false;
             }
             else
             {
                 productStorages = Form1.Products.Where(a => a.Name.Contains(search_product_txt.Text)).ToList();
                 searchProdDataGrid.DataSource = productStorages;
+            }
+            if (productStorages != null)
+            {
                 searchProdDataGrid.Columns["Id"].Visible = false;
+                searchProdDataGrid.Columns["Name"].HeaderText = "Mahsulot nomi";
+                searchProdDataGrid.Columns["Barcode"].HeaderText = "Shrix kodi";
+                searchProdDataGrid.Columns["Preparer"].HeaderText = "Yetkazib beruvchi";
+                searchProdDataGrid.Columns["Group"].HeaderText = "Guruhi";
+                searchProdDataGrid.Columns["Quantity"].HeaderText = "Soni";
             }
         }
 

@@ -8,5 +8,10 @@ namespace Warehouse.UserControls
         {
             InitializeComponent();
         }
+
+        private void search_filial_txt_TextChanged(object sender, System.EventArgs e)
+        {
+
+        }
     }
 }
