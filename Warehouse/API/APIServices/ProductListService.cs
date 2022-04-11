@@ -12,8 +12,6 @@ namespace Warehouse.API.APIServices
     {
         private readonly Request<ProductStorageModel> _productStorageService;
         private readonly HttpClient client;
-        private readonly string query;
-        string localUrl = "http://159.223.18.152:8000/api/";
         public ProductListService()
         {
             _productStorageService = new Request<ProductStorageModel>("productstorage");
@@ -23,9 +21,9 @@ namespace Warehouse.API.APIServices
             ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
             client = new HttpClient(handler);
             //ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls;
-            client.BaseAddress = new Uri(localUrl);
+            client.BaseAddress = new Uri(StaticModels.BaseURL);
             client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Add("Authorization", "Bearer 9d9f9a0852dde9e4bff731986ea2daa48569ba45");
+            client.DefaultRequestHeaders.Add("Authorization", $"Bearer {StaticModels.Token}");
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
