@@ -39,19 +39,31 @@ namespace Warehouse.CRUDForms
         {
             FakturaItemViewModel itemViewModel = new FakturaItemViewModel()
             {
+                Id = _storageModel.Id,
                 ProdName = _storageModel.Name,
                 ProdBarcode = _storageModel.Barcode,
                 ProdGroup = _storageModel.Group,
                 ProdPreparer = _storageModel.Preparer,
-                Body_dollar = double.Parse(txtSoldPrice.Text),
-                Dollar = double.Parse(txtDollar.Text),
-                Quantity = double.Parse(txtQuantity.Text)
-
+                Body_dollar = double.Parse(txtDollar.Text),
+                Dollar = double.Parse(txtSoldPrice.Text),
+                Quantity = double.Parse(txtQuantity.Text),
+                
             };
             _fakturaTayyorlash.FillDataGrid(itemViewModel);
             //await fakturaService.ConfirmFaktura(itemCreateResponse.FakturaId, "1");
             Close();
 
+        }
+
+        private void txtQuantity_TextChanged(object sender, System.EventArgs e)
+        {
+            if(txtQuantity.Text != "")
+            {
+                if (_storageModel.Quantity < double.Parse(txtQuantity.Text))
+                {
+                    MessageBox.Show("Ombordagi qiymatdan ko'p kiritildi!", "Xabar!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }

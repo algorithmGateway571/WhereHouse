@@ -55,7 +55,7 @@ namespace Warehouse
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "WaitForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "WaitForm";
             this.TransparencyKey = System.Drawing.SystemColors.Control;
             this.Load += new System.EventHandler(this.WaitForm_Load);

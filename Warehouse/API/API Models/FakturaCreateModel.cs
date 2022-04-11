@@ -20,5 +20,11 @@ namespace Warehouse.API.API_Models
         public string Filial { get; set; }
         [JsonProperty("status")]
         public int Status { get; set; }
+        [JsonProperty("total_arrival_price")]
+        public double TotalArrival_price { get; set; }
+        [JsonProperty("total_selling_price")]
+        public double TotalSelling_price { get; set; }
+        [JsonProperty("total_diff")]
+        public double TotalDifference { get; set; }
     }
 }

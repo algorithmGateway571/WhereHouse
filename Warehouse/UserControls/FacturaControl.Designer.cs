@@ -40,18 +40,20 @@ namespace Warehouse.UserControls
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblQayta = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.historyType_comboBox = new Bunifu.UI.WinForms.BunifuDropdown();
             this.search_filial_txt = new Bunifu.UI.WinForms.BunifuTextBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.FakturaDataGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
             this.panel9 = new System.Windows.Forms.Panel();
             this.FakturaItemDataGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
-            this.historyType_comboBox = new Bunifu.UI.WinForms.BunifuDropdown();
             this.tableLayoutPanel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -128,6 +130,53 @@ namespace Warehouse.UserControls
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(1236, 34);
             this.panel6.TabIndex = 1;
+            // 
+            // historyType_comboBox
+            // 
+            this.historyType_comboBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.historyType_comboBox.BackColor = System.Drawing.Color.Transparent;
+            this.historyType_comboBox.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(34)))), ((int)(((byte)(59)))));
+            this.historyType_comboBox.BorderColor = System.Drawing.Color.Silver;
+            this.historyType_comboBox.BorderRadius = 8;
+            this.historyType_comboBox.Color = System.Drawing.Color.Silver;
+            this.historyType_comboBox.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
+            this.historyType_comboBox.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.historyType_comboBox.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.historyType_comboBox.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.historyType_comboBox.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.historyType_comboBox.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
+            this.historyType_comboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.historyType_comboBox.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
+            this.historyType_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.historyType_comboBox.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.historyType_comboBox.FillDropDown = true;
+            this.historyType_comboBox.FillIndicator = false;
+            this.historyType_comboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.historyType_comboBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.historyType_comboBox.ForeColor = System.Drawing.Color.White;
+            this.historyType_comboBox.FormattingEnabled = true;
+            this.historyType_comboBox.Icon = null;
+            this.historyType_comboBox.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.historyType_comboBox.IndicatorColor = System.Drawing.Color.Gray;
+            this.historyType_comboBox.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
+            this.historyType_comboBox.ItemBackColor = System.Drawing.Color.White;
+            this.historyType_comboBox.ItemBorderColor = System.Drawing.Color.White;
+            this.historyType_comboBox.ItemForeColor = System.Drawing.Color.Black;
+            this.historyType_comboBox.ItemHeight = 26;
+            this.historyType_comboBox.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
+            this.historyType_comboBox.ItemHighLightForeColor = System.Drawing.Color.White;
+            this.historyType_comboBox.Items.AddRange(new object[] {
+            "Faktura history",
+            "Mahsulot qabul history"});
+            this.historyType_comboBox.ItemTopMargin = 3;
+            this.historyType_comboBox.Location = new System.Drawing.Point(950, 0);
+            this.historyType_comboBox.Name = "historyType_comboBox";
+            this.historyType_comboBox.Size = new System.Drawing.Size(271, 32);
+            this.historyType_comboBox.TabIndex = 3;
+            this.historyType_comboBox.Text = "Faktura turi";
+            this.historyType_comboBox.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
+            this.historyType_comboBox.TextLeftMargin = 5;
+            this.historyType_comboBox.SelectedIndexChanged += new System.EventHandler(this.historyType_comboBox_SelectedIndexChanged);
             // 
             // search_filial_txt
             // 
@@ -228,6 +277,7 @@ namespace Warehouse.UserControls
             // FakturaDataGrid
             // 
             this.FakturaDataGrid.AllowCustomTheming = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
             this.FakturaDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -236,7 +286,7 @@ namespace Warehouse.UserControls
             this.FakturaDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.FakturaDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.FakturaDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.DodgerBlue;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
@@ -263,7 +313,7 @@ namespace Warehouse.UserControls
             this.FakturaDataGrid.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.FakturaDataGrid.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             this.FakturaDataGrid.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
@@ -279,6 +329,14 @@ namespace Warehouse.UserControls
             this.FakturaDataGrid.HeaderForeColor = System.Drawing.Color.White;
             this.FakturaDataGrid.Location = new System.Drawing.Point(0, 0);
             this.FakturaDataGrid.Name = "FakturaDataGrid";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FakturaDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.FakturaDataGrid.RowHeadersVisible = false;
             this.FakturaDataGrid.RowTemplate.Height = 40;
             this.FakturaDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -298,22 +356,23 @@ namespace Warehouse.UserControls
             // FakturaItemDataGrid
             // 
             this.FakturaItemDataGrid.AllowCustomTheming = false;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
-            this.FakturaItemDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.FakturaItemDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.FakturaItemDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.FakturaItemDataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
             this.FakturaItemDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.FakturaItemDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.FakturaItemDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.FakturaItemDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 11.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(115)))), ((int)(((byte)(204)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FakturaItemDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.FakturaItemDataGrid.ColumnHeadersHeight = 40;
             this.FakturaItemDataGrid.CurrentTheme.AlternatingRowsStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(251)))), ((int)(((byte)(255)))));
             this.FakturaItemDataGrid.CurrentTheme.AlternatingRowsStyle.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
@@ -333,14 +392,14 @@ namespace Warehouse.UserControls
             this.FakturaItemDataGrid.CurrentTheme.RowsStyle.ForeColor = System.Drawing.Color.Black;
             this.FakturaItemDataGrid.CurrentTheme.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
             this.FakturaItemDataGrid.CurrentTheme.RowsStyle.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.FakturaItemDataGrid.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(232)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.FakturaItemDataGrid.DefaultCellStyle = dataGridViewCellStyle7;
             this.FakturaItemDataGrid.Dock = System.Windows.Forms.DockStyle.Fill;
             this.FakturaItemDataGrid.EnableHeadersVisualStyles = false;
             this.FakturaItemDataGrid.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(221)))), ((int)(((byte)(238)))), ((int)(((byte)(255)))));
@@ -349,59 +408,20 @@ namespace Warehouse.UserControls
             this.FakturaItemDataGrid.HeaderForeColor = System.Drawing.Color.White;
             this.FakturaItemDataGrid.Location = new System.Drawing.Point(0, 0);
             this.FakturaItemDataGrid.Name = "FakturaItemDataGrid";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.FakturaItemDataGrid.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.FakturaItemDataGrid.RowHeadersVisible = false;
             this.FakturaItemDataGrid.RowTemplate.Height = 40;
             this.FakturaItemDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.FakturaItemDataGrid.Size = new System.Drawing.Size(1236, 389);
             this.FakturaItemDataGrid.TabIndex = 0;
             this.FakturaItemDataGrid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
-            // 
-            // historyType_comboBox
-            // 
-            this.historyType_comboBox.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.historyType_comboBox.BackColor = System.Drawing.Color.Transparent;
-            this.historyType_comboBox.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(34)))), ((int)(((byte)(59)))));
-            this.historyType_comboBox.BorderColor = System.Drawing.Color.Silver;
-            this.historyType_comboBox.BorderRadius = 8;
-            this.historyType_comboBox.Color = System.Drawing.Color.Silver;
-            this.historyType_comboBox.Direction = Bunifu.UI.WinForms.BunifuDropdown.Directions.Down;
-            this.historyType_comboBox.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.historyType_comboBox.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.historyType_comboBox.DisabledColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.historyType_comboBox.DisabledForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.historyType_comboBox.DisabledIndicatorColor = System.Drawing.Color.DarkGray;
-            this.historyType_comboBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.historyType_comboBox.DropdownBorderThickness = Bunifu.UI.WinForms.BunifuDropdown.BorderThickness.Thin;
-            this.historyType_comboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.historyType_comboBox.DropDownTextAlign = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.historyType_comboBox.FillDropDown = true;
-            this.historyType_comboBox.FillIndicator = false;
-            this.historyType_comboBox.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.historyType_comboBox.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.historyType_comboBox.ForeColor = System.Drawing.Color.White;
-            this.historyType_comboBox.FormattingEnabled = true;
-            this.historyType_comboBox.Icon = null;
-            this.historyType_comboBox.IndicatorAlignment = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.historyType_comboBox.IndicatorColor = System.Drawing.Color.Gray;
-            this.historyType_comboBox.IndicatorLocation = Bunifu.UI.WinForms.BunifuDropdown.Indicator.Right;
-            this.historyType_comboBox.ItemBackColor = System.Drawing.Color.White;
-            this.historyType_comboBox.ItemBorderColor = System.Drawing.Color.White;
-            this.historyType_comboBox.ItemForeColor = System.Drawing.Color.Black;
-            this.historyType_comboBox.ItemHeight = 26;
-            this.historyType_comboBox.ItemHighLightColor = System.Drawing.Color.DodgerBlue;
-            this.historyType_comboBox.ItemHighLightForeColor = System.Drawing.Color.White;
-            this.historyType_comboBox.Items.AddRange(new object[] {
-            "Faktura history",
-            "Mahsulot qabul history"});
-            this.historyType_comboBox.ItemTopMargin = 3;
-            this.historyType_comboBox.Location = new System.Drawing.Point(950, 0);
-            this.historyType_comboBox.Name = "historyType_comboBox";
-            this.historyType_comboBox.Size = new System.Drawing.Size(271, 32);
-            this.historyType_comboBox.TabIndex = 3;
-            this.historyType_comboBox.Text = "Faktura turi";
-            this.historyType_comboBox.TextAlignment = Bunifu.UI.WinForms.BunifuDropdown.TextAlign.Left;
-            this.historyType_comboBox.TextLeftMargin = 5;
-            this.historyType_comboBox.SelectedIndexChanged += new System.EventHandler(this.historyType_comboBox_SelectedIndexChanged);
             // 
             // FacturaControl
             // 

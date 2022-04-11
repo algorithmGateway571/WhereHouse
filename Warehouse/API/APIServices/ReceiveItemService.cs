@@ -37,7 +37,7 @@ namespace Warehouse.API.APIServices
             patchClient.DefaultRequestHeaders.Add("Authorization", "Bearer 9d9f9a0852dde9e4bff731986ea2daa48569ba45");
             HttpContent httpContent = new StringContent("{\"status\":" + status + "}", Encoding.UTF8, "application/json");
             HttpResponseMessage message = await _receiveItemService.PatchAsync(patchClient, url, httpContent);
-            ReceiveModel receiveModel = await message.Content.ReadAsAsync<ReceiveModel>();
+            ReceiveResponseModel receiveModel = await message.Content.ReadAsAsync<ReceiveResponseModel>();
             
         }
 

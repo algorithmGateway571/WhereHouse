@@ -7,7 +7,7 @@ namespace Warehouse.API.API_Models
         [JsonProperty("faktura")]
         public int FakturaId { get; set; }
         [JsonProperty("product")]
-        public string ProductBarcode { get; set; }
+        public int ProductId { get; set; }
         [JsonProperty("body_dollar")]
         public double BodyDollar { get; set; }
         [JsonProperty("dollar")]
@@ -23,12 +23,14 @@ namespace Warehouse.API.API_Models
         [JsonProperty("faktura")]
         public int FakturaId { get; set; }
         [JsonProperty("product")]
-        public ProductModel Product { get; set; }
+        public ProductFakturaModel Product { get; set; }
         [JsonProperty("body_dollar")]
         public double BodyDollar { get; set; }
         [JsonProperty("dollar")]
         public double Dollar { get; set; }
         [JsonProperty("quantity")]
         public double Quantity { get; set; }
+        [JsonProperty("price_diff")]
+        public double PriceDifference { get; set; }
     }
 }

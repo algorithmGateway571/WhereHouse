@@ -4,6 +4,7 @@ using System.Data;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using Warehouse.API.API_Models;
 using Warehouse.API.APIServices;
@@ -25,6 +26,7 @@ namespace Warehouse.UserControls
 
         private void bunifuTextBox1_TextChanged(object sender, EventArgs e)
         {
+            
             mahsulotDataGrid.DataSource = null;
             if (search_comboBox.SelectedIndex == 0)
             {
@@ -44,7 +46,7 @@ namespace Warehouse.UserControls
                 mahsulotDataGrid.Columns["Id"].Visible = false;
                 mahsulotDataGrid.Columns["Name"].HeaderText = "Mahsulot nomi";
                 mahsulotDataGrid.Columns["Barcode"].HeaderText = "Shrix kodi";
-                mahsulotDataGrid.Columns["Preparer"].HeaderText = "Yetkazib beruvchi";
+                mahsulotDataGrid.Columns["Preparer"].HeaderText = "Ishlab chiqaruvchi";
                 mahsulotDataGrid.Columns["Group"].HeaderText = "Guruhi";
                 mahsulotDataGrid.Columns["Quantity"].HeaderText = "Soni";
             }
@@ -161,6 +163,11 @@ namespace Warehouse.UserControls
         {
             memoryimg = new Bitmap(pnl.Width, pnl.Height);
             pnl.DrawToBitmap(memoryimg, new Rectangle(0, 0, pnl.Width, pnl.Height));
+        }
+
+        private void bunifuTextBox1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+
         }
     }
 }

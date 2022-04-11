@@ -53,7 +53,8 @@ namespace Warehouse.UserControls
                 Quantity = qabulViewModel.Quantity,
             };
             createModelList.Add(createModel);
-            summaDollar_txt.Text = createModel.Dollar.ToString();
+            summaTanNarx_txt.Text = createModelList.Sum(a => a.Dollar).ToString();
+            summaSotish_txt.Text = createModelList.Sum(a => a.SotishDollar).ToString();
             receiveDataGrid.Refresh();
         }
 
@@ -169,6 +170,11 @@ namespace Warehouse.UserControls
         }
 
         private void bunifuButton4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bunifuPanel1_Click(object sender, EventArgs e)
         {
 
         }

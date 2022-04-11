@@ -9,6 +9,7 @@ namespace Warehouse.ViewModels
     public class FakturaItemViewModel
     {
         public int index { get; set; }
+        public int Id { get; set; }
         public string ProdName { get; set; }
         public string ProdBarcode { get; set; }
         public string ProdPreparer { get; set; }
@@ -16,5 +17,6 @@ namespace Warehouse.ViewModels
         public double Body_dollar { get; set; }
         public double Dollar { get; set; }
         public double Quantity { get; set; }
+        public string Measurement { get; set; }
     }
 }

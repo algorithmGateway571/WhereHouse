@@ -15,7 +15,7 @@ namespace Warehouse.UserControls
         List<FakturaItemCreateResponse> itemCreateResponses = new List<FakturaItemCreateResponse>();
         List<FakturaItemViewModel> fakturaItemViews = new List<FakturaItemViewModel>();
 
-        List<ReceiveModel> receiveModels = new List<ReceiveModel>();
+        List<ReceiveResponseModel> receiveModels = new List<ReceiveResponseModel>();
         List<ReceiveItemModel> receiveItemModels = new List<ReceiveItemModel>();
         List<MahsulotQabulViewModel> qabulViewModels = new List<MahsulotQabulViewModel>();
         ReceiveService receiveService = new ReceiveService();
@@ -71,6 +71,7 @@ namespace Warehouse.UserControls
                         Dollar = item.Dollar,
                         Body_dollar = item.BodyDollar,
                         Quantity = item.Quantity,
+                        Measurement = item.Product.Measurement,
                     });
                 }
                 FakturaDataGrid.DataSource = fakturaCreates;
@@ -79,8 +80,13 @@ namespace Warehouse.UserControls
                 FakturaDataGrid.Columns["Id"].Visible = false;
                 FakturaDataGrid.Columns["Filial"].HeaderText = "Filial";
                 FakturaDataGrid.Columns["Date"].HeaderText = "Sana";
-                FakturaDataGrid.Columns["Status"].HeaderText = "status";
+                FakturaDataGrid.Columns["Status"].HeaderText = "Holati";
+                FakturaDataGrid.Columns["Status"].HeaderText = "Holati";
+                FakturaDataGrid.Columns["TotalArrival_price"].HeaderText = "Jami kelish summasi";
+                FakturaDataGrid.Columns["TotalSelling_price"].HeaderText = "Jami sotish summasi";
+                FakturaDataGrid.Columns["TotalDifference"].HeaderText = "Jami farq";
 
+                FakturaItemDataGrid.Columns["Id"].Visible = false;
                 FakturaItemDataGrid.Columns["index"].HeaderText = "T/r";
                 FakturaItemDataGrid.Columns["ProdName"].HeaderText = "Mahsulot";
                 FakturaItemDataGrid.Columns["ProdBarcode"].HeaderText = "Shtrix kod";
@@ -89,6 +95,7 @@ namespace Warehouse.UserControls
                 FakturaItemDataGrid.Columns["Dollar"].HeaderText = "Sotish narxi $";
                 FakturaItemDataGrid.Columns["Body_dollar"].HeaderText = "Tan narxi $";
                 FakturaItemDataGrid.Columns["Quantity"].HeaderText = "Soni";
+
 
             }
             else
@@ -108,16 +115,18 @@ namespace Warehouse.UserControls
                         SotishDollar = item.SotishDollar,
                         Receiveid = item.Receive,
                         Quantity = item.Quantity,
+
                     });
                 };
                 FakturaDataGrid.DataSource = receiveModels;
                 FakturaDataGrid.Columns["Id"].Visible = false;
                 FakturaDataGrid.Columns["Name"].HeaderText = "Qabul momi";
                 FakturaDataGrid.Columns["Date"].HeaderText = "Qabul sanasi";
-                FakturaDataGrid.Columns["DeliverId"].HeaderText = "Yetkazib beruvchi";
-                FakturaDataGrid.Columns["Status"].HeaderText = "Holadi";
+                FakturaDataGrid.Columns["Deliver"].HeaderText = "Yetkazib beruvchi";
+                FakturaDataGrid.Columns["Status"].HeaderText = "Holati";
 
                 FakturaItemDataGrid.DataSource = qabulViewModels;
+                FakturaItemDataGrid.Columns["ReceiveId"].Visible = false;
                 FakturaItemDataGrid.Columns["Index"].HeaderText = "T/r";
                 FakturaItemDataGrid.Columns["ProdName"].HeaderText = "Mahsulot";
                 FakturaItemDataGrid.Columns["ProdBarcode"].HeaderText = "Shtrix kod";
@@ -126,6 +135,7 @@ namespace Warehouse.UserControls
                 FakturaItemDataGrid.Columns["Dollar"].HeaderText = "Tan narx";
                 FakturaItemDataGrid.Columns["SotishDollar"].HeaderText = "Sotish narx";
                 FakturaItemDataGrid.Columns["Quantity"].HeaderText = "Soni";
+
             }
         }
 

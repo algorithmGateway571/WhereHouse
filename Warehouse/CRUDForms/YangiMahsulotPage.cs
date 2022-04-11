@@ -5,6 +5,8 @@ using Warehouse.API.API_Models;
 using Warehouse.API.APIServices;
 using Warehouse.UserControls;
 using Warehouse.ViewModels;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Warehouse.CRUDForms
 {
@@ -107,7 +109,11 @@ namespace Warehouse.CRUDForms
 
         private void pictureBox1_Click(object sender, System.EventArgs e)
         {
-            txtBarcode.Text = txtName.Text[0].ToString() + (firstBarcode++).ToString();
+            
+            byte[] encoded = SHA256.Create().ComputeHash(Encoding.UTF8.GetBytes(txtName.Text));
+            var value = BitConverter.ToUInt32(encoded, 0) % 1000000;
+            txtBarcode.Text = txtName.Text[0].ToString() + value.ToString();
+
         }
     }
 }

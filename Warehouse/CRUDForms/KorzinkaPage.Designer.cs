@@ -335,6 +335,7 @@ namespace Warehouse.CRUDForms
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(495, 37);
             this.txtQuantity.TabIndex = 2;
+            this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
             // 
             // panelDollar
             // 

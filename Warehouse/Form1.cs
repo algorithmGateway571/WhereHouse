@@ -15,7 +15,7 @@ namespace Warehouse
         public static List<FilialModel> Filials = new List<FilialModel>();
         public static List<ReceiveModel> receiveModels = new List<ReceiveModel>();
         public static ReceiveItemModel ReceiveItemModel = new ReceiveItemModel();
-        public static ReceiveModel Receive = new ReceiveModel();
+        public static ReceiveResponseModel Receive = new ReceiveResponseModel();
         public static FakturaCreateResponse Faktura = new FakturaCreateResponse();
 
         public static MenuService menuService = new MenuService();
@@ -35,13 +35,11 @@ namespace Warehouse
         private async void Form1_Load(object sender, EventArgs e)
         {
             menuService.showControl(main_panel, 1);
-            waitForm.Show(this);
+            waitForm.Show();
             Products = await productListService.GetProducts();
             Groups = await groupService.GetGroups();
             Delivers = await deliverService.GetDelivers();
             Filials = await filialService.GetFilials();
-            //Thread thread = new Thread(GetAllData);
-            //thread.Start();
             waitForm.Close();
 
         }

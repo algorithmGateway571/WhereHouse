@@ -10,6 +10,7 @@ namespace Warehouse.CRUDForms
         ReceiveService receiveService = new ReceiveService();
         DeliverService deliverService = new DeliverService();
         ReceiveModel receiveModel { get; set; }
+        ReceiveResponseModel receiveResponseModel { get; set; }
         public QabulniYaratishPage()
         {
             InitializeComponent();
@@ -41,11 +42,10 @@ namespace Warehouse.CRUDForms
                 {
                     Name = txtRecieveName.Text,
                     DeliverId = Form1.Delivers.Find(a => a.Name == comboDeliver.SelectedItem.ToString()).Id,
-                    Date = DateTime.Now,
                     Status = 0
                 };
-                ReceiveModel model = await receiveService.CreateReceive(receiveModel);
-                receiveModel = model;
+                ReceiveResponseModel model = await receiveService.CreateReceive(receiveModel);
+                receiveResponseModel = model;
                 if (model == null)
                 {
                     MessageBox.Show("Qabul qilish bajarilmadi");
@@ -68,12 +68,11 @@ namespace Warehouse.CRUDForms
                 {
                     Name = txtRecieveName.Text,
                     DeliverId = deliver.Id,
-                    Date = DateTime.Now,
                     Status = 0
                 };
 
-                ReceiveModel model = await receiveService.CreateReceive(receiveModel);
-                receiveModel = model;
+                ReceiveResponseModel model = await receiveService.CreateReceive(receiveModel);
+                receiveResponseModel = model;
                 if (model == null || deliver == null)
                 {
                     MessageBox.Show("Qabul qilish bajarilmadi");
@@ -83,7 +82,8 @@ namespace Warehouse.CRUDForms
                     MessageBox.Show("Mahsulot qabuli muvaffaqiyatli qo'shildi!");
                 }
             }
-            Form1.ReceiveItemModel.Receive = receiveModel.Id;
+            Form1.ReceiveItemModel.Receive = receiveResponseModel.Id;
+            Form1.Receive = receiveResponseModel;
             this.Close();
         }
 

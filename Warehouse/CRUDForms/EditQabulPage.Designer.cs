@@ -30,8 +30,8 @@ namespace Warehouse.CRUDForms
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditQabulPage));
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
-            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges2 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             this.panel1 = new System.Windows.Forms.Panel();
             this.cancel_btn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.edit_btn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -99,11 +99,11 @@ namespace Warehouse.CRUDForms
             this.cancel_btn.ColorContrastOnClick = 45;
             this.cancel_btn.ColorContrastOnHover = 45;
             this.cancel_btn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges1.BottomLeft = true;
-            borderEdges1.BottomRight = true;
-            borderEdges1.TopLeft = true;
-            borderEdges1.TopRight = true;
-            this.cancel_btn.CustomizableEdges = borderEdges1;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.cancel_btn.CustomizableEdges = borderEdges5;
             this.cancel_btn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.cancel_btn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.cancel_btn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -190,11 +190,11 @@ namespace Warehouse.CRUDForms
             this.edit_btn.ColorContrastOnClick = 45;
             this.edit_btn.ColorContrastOnHover = 45;
             this.edit_btn.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges2.BottomLeft = true;
-            borderEdges2.BottomRight = true;
-            borderEdges2.TopLeft = true;
-            borderEdges2.TopRight = true;
-            this.edit_btn.CustomizableEdges = borderEdges2;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.edit_btn.CustomizableEdges = borderEdges6;
             this.edit_btn.DialogResult = System.Windows.Forms.DialogResult.None;
             this.edit_btn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.edit_btn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -291,6 +291,7 @@ namespace Warehouse.CRUDForms
             this.txtDollar.Name = "txtDollar";
             this.txtDollar.Size = new System.Drawing.Size(529, 32);
             this.txtDollar.TabIndex = 19;
+            this.txtDollar.TextChanged += new System.EventHandler(this.txtDollar_TextChanged);
             // 
             // label7
             // 
@@ -397,6 +398,7 @@ namespace Warehouse.CRUDForms
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(529, 32);
             this.txtName.TabIndex = 25;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // label8
             // 
