@@ -29,7 +29,6 @@ namespace Warehouse.CRUDForms
         {
             MahsulotQabulViewModel itemCreateModel = new MahsulotQabulViewModel()
             {
-                Receiveid = _qabulViewModel.Receiveid,
                 ProdName = txtName.Text,
                 ProdBarcode = _qabulViewModel.ProdBarcode,
                 ProdDeliver = _qabulViewModel.ProdDeliver,

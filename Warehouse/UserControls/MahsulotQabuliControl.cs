@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using Warehouse.API.API_Models;
 using Warehouse.API.APIServices;
 using Warehouse.CRUDForms;
+using Warehouse.UI_Services;
 using Warehouse.ViewModels;
 
 namespace Warehouse.UserControls
@@ -46,7 +47,7 @@ namespace Warehouse.UserControls
 
             createModel = new ReceiveItemCreateModel()
             {
-                Receive = qabulViewModel.Receiveid,
+                Receive = Form1.ReceiveItemModel.Receive,
                 Product = qabulViewModel.ProdBarcode,
                 Dollar = qabulViewModel.Dollar,
                 SotishDollar = qabulViewModel.SotishDollar,
@@ -65,6 +66,7 @@ namespace Warehouse.UserControls
 
         private void bunifuButton2_Click(object sender, EventArgs e)
         {
+
             QabulniYaratishPage qabulniYaratishPage = new QabulniYaratishPage();
             qabulniYaratishPage.ShowDialog();
             btnQabul.Enabled = false;
@@ -126,8 +128,12 @@ namespace Warehouse.UserControls
                 ReceiveItemModel itemModel = await itemService.CreateReceiveItem(item);
             }
             receiveDataGrid.DataSource = null;
+            createModelList.Clear();
+            receiveItems.Clear();
             btnQabul.Enabled = true;
+            qabulViewModels.Clear();
             Form1.ReceiveItemModel.Receive = 0;
+            Form1.receiveModels.Clear();
             waitForm.Close();
         }
 
@@ -146,6 +152,10 @@ namespace Warehouse.UserControls
                 qushishPage.FillForm(this, Form1.Products.Find(a => a.Id == prodId));
                 qushishPage.ShowDialog();
                 searchProdDataGrid.Visible = false;
+            }
+            if(e.KeyCode == Keys.Down)
+            {
+                searchProdDataGrid.Focus();
             }
         }
 
@@ -169,14 +179,15 @@ namespace Warehouse.UserControls
             
         }
 
-        private void bunifuButton4_Click(object sender, EventArgs e)
+        private void importExcel_btn_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void bunifuPanel1_Click(object sender, EventArgs e)
-        {
-
+            if (Form1.ReceiveItemModel.Receive == 0)
+            {
+                MessageBox.Show("Qabul boshlanmagan, Iltimos avval 'Qabulni boshlash' tugmasini bosing!", "Xatolik!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            ImportFromExcel import = new ImportFromExcel();
+            import.ImportFromExcelDataReceive(receiveDataGrid, this);
         }
     }
 }

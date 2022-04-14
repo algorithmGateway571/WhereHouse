@@ -3,7 +3,6 @@
     public class MahsulotQabulViewModel
     {
         public int Index { get; set; }
-        public int Receiveid { get; set; }
         public string ProdName { get; set; }
         public string ProdBarcode { get; set; }
         public string ProdDeliver { get; set; }

@@ -120,7 +120,7 @@ namespace Warehouse.CRUDForms
             this.comboMeasurement.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboMeasurement.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.comboMeasurement.Font = new System.Drawing.Font("Calibri", 18F);
-            this.comboMeasurement.ForeColor = System.Drawing.Color.Black;
+            this.comboMeasurement.ForeColor = System.Drawing.Color.White;
             this.comboMeasurement.FormattingEnabled = true;
             this.comboMeasurement.Items.AddRange(new object[] {
             "dona",

@@ -26,6 +26,7 @@ namespace Warehouse.UserControls
         {
             InitializeComponent();
             historyType_comboBox.SelectedIndex = 0;
+            
         }
 
         private void search_filial_txt_TextChanged(object sender, System.EventArgs e)
@@ -47,18 +48,23 @@ namespace Warehouse.UserControls
 
         }
 
-        private void FacturaControl_Load(object sender, System.EventArgs e)
+        private async void FacturaControl_Load(object sender, System.EventArgs e)
         {
-            GetFakturas();
+            fakturaCreates = await fakturaService.GetFakturas();
+            itemCreateResponses = await itemService.GetFakturaItems();
+            GetFakturas(fakturaCreates, itemCreateResponses);
+            foreach (var item in Form1.Filials)
+            {
+                filiallar_combo.Items.Add(item.Name);
+            }
         }
 
-        public async void GetFakturas()
+        public async void GetFakturas(List<FakturaCreateResponse> fakturaCreates, List<FakturaItemCreateResponse> itemCreateResponses)
         {
             int i = 1;
             if(historyType_comboBox.SelectedIndex == 0)
             {
-                fakturaCreates = await fakturaService.GetFakturas();
-                itemCreateResponses = await itemService.GetFakturaItems();
+
                 foreach (var item in itemCreateResponses)
                 {
                     fakturaItemViews.Add(new FakturaItemViewModel()
@@ -95,6 +101,7 @@ namespace Warehouse.UserControls
                 FakturaItemDataGrid.Columns["Dollar"].HeaderText = "Sotish narxi $";
                 FakturaItemDataGrid.Columns["Body_dollar"].HeaderText = "Tan narxi $";
                 FakturaItemDataGrid.Columns["Quantity"].HeaderText = "Soni";
+                FakturaItemDataGrid.Columns["Measurement"].HeaderText = "O'lchovi";
 
 
             }
@@ -113,7 +120,6 @@ namespace Warehouse.UserControls
                         ProdGroup = item.Product.Group,
                         Dollar = item.Dollar,
                         SotishDollar = item.SotishDollar,
-                        Receiveid = item.Receive,
                         Quantity = item.Quantity,
 
                     });
@@ -124,9 +130,11 @@ namespace Warehouse.UserControls
                 FakturaDataGrid.Columns["Date"].HeaderText = "Qabul sanasi";
                 FakturaDataGrid.Columns["Deliver"].HeaderText = "Yetkazib beruvchi";
                 FakturaDataGrid.Columns["Status"].HeaderText = "Holati";
+                FakturaDataGrid.Columns["TotalArrivalPrice"].HeaderText = "Jami kelish summasi";
+                FakturaDataGrid.Columns["TotalSellingPrice"].HeaderText = "Jami sotish summasi";
+
 
                 FakturaItemDataGrid.DataSource = qabulViewModels;
-                FakturaItemDataGrid.Columns["ReceiveId"].Visible = false;
                 FakturaItemDataGrid.Columns["Index"].HeaderText = "T/r";
                 FakturaItemDataGrid.Columns["ProdName"].HeaderText = "Mahsulot";
                 FakturaItemDataGrid.Columns["ProdBarcode"].HeaderText = "Shtrix kod";
@@ -139,13 +147,28 @@ namespace Warehouse.UserControls
             }
         }
 
-        private void historyType_comboBox_SelectedIndexChanged(object sender, System.EventArgs e)
+        private async void historyType_comboBox_SelectedIndexChanged(object sender, System.EventArgs e)
         {
-            GetFakturas();
+            fakturaCreates = await fakturaService.GetFakturas();
+            itemCreateResponses = await itemService.GetFakturaItems(); 
+            GetFakturas(fakturaCreates, itemCreateResponses);
         }
 
-        private void bunifuButton8_Click(object sender, System.EventArgs e)
+        private async void Yangilash_btn_Click(object sender, System.EventArgs e)
         {
+            fakturaCreates = await fakturaService.GetFakturas();
+            itemCreateResponses = await itemService.GetFakturaItems(); 
+            GetFakturas(fakturaCreates, itemCreateResponses);
+        }
+
+        private void FakturaDataGrid_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void filialCombo_selectedIndexChanged(object sender, System.EventArgs e)
+        {
+           
 
         }
     }

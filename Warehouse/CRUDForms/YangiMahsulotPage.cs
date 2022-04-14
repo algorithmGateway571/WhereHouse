@@ -52,7 +52,6 @@ namespace Warehouse.CRUDForms
                 ProductCreateResponse createResponse = await listProductService.CreateProduct(createModel);
                 MahsulotQabulViewModel qabulViewModel = new MahsulotQabulViewModel()
                 {
-                    Receiveid = Form1.ReceiveItemModel.Receive,
                     ProdName = createResponse.Name,
                     ProdBarcode = createResponse.Barcode,
                     ProdDeliver = createResponse.Preparer,
@@ -80,7 +79,6 @@ namespace Warehouse.CRUDForms
                 ProductCreateResponse createResponse = await listProductService.CreateProduct(createModel);
                 MahsulotQabulViewModel qabulViewModel = new MahsulotQabulViewModel()
                 {
-                    Receiveid = Form1.ReceiveItemModel.Receive,
                     ProdName = createModel.Name,
                     ProdBarcode = createModel.Barcode,
                     ProdDeliver = createModel.Preparer,

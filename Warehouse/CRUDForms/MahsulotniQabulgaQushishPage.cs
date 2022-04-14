@@ -13,6 +13,7 @@ namespace Warehouse.CRUDForms
         public MahsulotniQabulgaQushishPage()
         {
             InitializeComponent();
+
         }
 
         public void FillForm(MahsulotQabuliControl mahsulotQabuli, ProductStorageModel productStorage)
@@ -20,8 +21,10 @@ namespace Warehouse.CRUDForms
             qabuliControl = mahsulotQabuli;
             storageModel = productStorage;
             txtName.Text = productStorage.Name;
-            //txtQuantity.Text = productStorage.Quantity.ToString();
-
+            txtDollar.Text = productStorage.Dollar.ToString();
+            txtSotishDollar.Text = productStorage.SotishDollar.ToString();
+            txtQuantity.Text = productStorage.Quantity.ToString();
+            txtQuantity.Focus();
         }
 
         private void bunifuButton7_Click(object sender, EventArgs e)
@@ -34,7 +37,6 @@ namespace Warehouse.CRUDForms
 
             MahsulotQabulViewModel mahsulotQabul = new MahsulotQabulViewModel()
             {
-                Receiveid = Form1.ReceiveItemModel.Receive,
                 ProdName = storageModel.Name,
                 ProdBarcode = storageModel.Barcode,
                 ProdDeliver = storageModel.Preparer,
@@ -45,6 +47,11 @@ namespace Warehouse.CRUDForms
             };
             qabuliControl.FillDataGrid(mahsulotQabul);
             this.Close();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

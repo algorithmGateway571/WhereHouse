@@ -43,19 +43,20 @@ namespace Warehouse.UserControls
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties1 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties2 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties3 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
-            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties4 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.bunifuPanel5 = new Bunifu.UI.WinForms.BunifuPanel();
             this.searchProdDataGrid = new Bunifu.UI.WinForms.BunifuDataGridView();
@@ -66,24 +67,21 @@ namespace Warehouse.UserControls
             this.bunifuButton4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuButton3 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.btnQabul = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.bunifuPanel2 = new Bunifu.UI.WinForms.BunifuPanel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.bunifuPanel1 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.summaSotish_txt = new Bunifu.UI.WinForms.BunifuTextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.summaTanNarx_txt = new Bunifu.UI.WinForms.BunifuTextBox();
             this.bunifuPanel3 = new Bunifu.UI.WinForms.BunifuPanel();
+            this.importExcel_btn = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuButton1 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.searchType_combobox = new Bunifu.UI.WinForms.BunifuDropdown();
             this.search_product_txt = new Bunifu.UI.WinForms.BunifuTextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.summaSotish_txt = new Bunifu.UI.WinForms.BunifuTextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.bunifuPanel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.searchProdDataGrid)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.receiveDataGrid)).BeginInit();
             this.bunifuPanel4.SuspendLayout();
-            this.bunifuPanel2.SuspendLayout();
             this.bunifuPanel1.SuspendLayout();
             this.bunifuPanel3.SuspendLayout();
             this.SuspendLayout();
@@ -92,20 +90,19 @@ namespace Warehouse.UserControls
             // 
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.bunifuPanel5, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.bunifuPanel4, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.bunifuPanel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.bunifuPanel1, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.bunifuPanel3, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.bunifuPanel5, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.bunifuPanel4, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.bunifuPanel1, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.bunifuPanel3, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
+            this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1126, 688);
             this.tableLayoutPanel1.TabIndex = 0;
             this.tableLayoutPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel1_Paint);
@@ -121,10 +118,10 @@ namespace Warehouse.UserControls
             this.bunifuPanel5.Controls.Add(this.searchProdDataGrid);
             this.bunifuPanel5.Controls.Add(this.receiveDataGrid);
             this.bunifuPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuPanel5.Location = new System.Drawing.Point(3, 123);
+            this.bunifuPanel5.Location = new System.Drawing.Point(3, 83);
             this.bunifuPanel5.Name = "bunifuPanel5";
             this.bunifuPanel5.ShowBorders = true;
-            this.bunifuPanel5.Size = new System.Drawing.Size(1120, 502);
+            this.bunifuPanel5.Size = new System.Drawing.Size(1120, 542);
             this.bunifuPanel5.TabIndex = 7;
             // 
             // searchProdDataGrid
@@ -136,6 +133,7 @@ namespace Warehouse.UserControls
             this.searchProdDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.searchProdDataGrid.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.searchProdDataGrid.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
+            this.searchProdDataGrid.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.searchProdDataGrid.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.searchProdDataGrid.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -267,7 +265,7 @@ namespace Warehouse.UserControls
             this.receiveDataGrid.RowHeadersVisible = false;
             this.receiveDataGrid.RowTemplate.Height = 40;
             this.receiveDataGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.receiveDataGrid.Size = new System.Drawing.Size(1120, 502);
+            this.receiveDataGrid.Size = new System.Drawing.Size(1120, 542);
             this.receiveDataGrid.TabIndex = 0;
             this.receiveDataGrid.Theme = Bunifu.UI.WinForms.BunifuDataGridView.PresetThemes.Light;
             // 
@@ -562,7 +560,6 @@ namespace Warehouse.UserControls
             this.bunifuButton4.TextMarginLeft = 0;
             this.bunifuButton4.TextPadding = new System.Windows.Forms.Padding(0);
             this.bunifuButton4.UseDefaultRadiusAndThickness = true;
-            this.bunifuButton4.Click += new System.EventHandler(this.bunifuButton4_Click);
             // 
             // bunifuButton3
             // 
@@ -746,47 +743,6 @@ namespace Warehouse.UserControls
             this.btnQabul.UseDefaultRadiusAndThickness = true;
             this.btnQabul.Click += new System.EventHandler(this.bunifuButton2_Click);
             // 
-            // bunifuPanel2
-            // 
-            this.bunifuPanel2.BackgroundColor = System.Drawing.Color.Transparent;
-            this.bunifuPanel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuPanel2.BackgroundImage")));
-            this.bunifuPanel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuPanel2.BorderColor = System.Drawing.Color.Silver;
-            this.bunifuPanel2.BorderRadius = 3;
-            this.bunifuPanel2.BorderThickness = 1;
-            this.bunifuPanel2.Controls.Add(this.label2);
-            this.bunifuPanel2.Controls.Add(this.label1);
-            this.bunifuPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuPanel2.Location = new System.Drawing.Point(3, 3);
-            this.bunifuPanel2.Name = "bunifuPanel2";
-            this.bunifuPanel2.ShowBorders = true;
-            this.bunifuPanel2.Size = new System.Drawing.Size(1120, 34);
-            this.bunifuPanel2.TabIndex = 5;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(997, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(108, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Qayta yuklash";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(18, 6);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(200, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Ma\'lumotlar yuklanmoqda...";
-            // 
             // bunifuPanel1
             // 
             this.bunifuPanel1.BackgroundColor = System.Drawing.Color.Transparent;
@@ -800,13 +756,112 @@ namespace Warehouse.UserControls
             this.bunifuPanel1.Controls.Add(this.label3);
             this.bunifuPanel1.Controls.Add(this.summaTanNarx_txt);
             this.bunifuPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuPanel1.Location = new System.Drawing.Point(0, 40);
+            this.bunifuPanel1.Location = new System.Drawing.Point(0, 0);
             this.bunifuPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.bunifuPanel1.Name = "bunifuPanel1";
             this.bunifuPanel1.ShowBorders = true;
             this.bunifuPanel1.Size = new System.Drawing.Size(1126, 40);
             this.bunifuPanel1.TabIndex = 4;
-            this.bunifuPanel1.Click += new System.EventHandler(this.bunifuPanel1_Click);
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(394, 10);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(165, 20);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "Summa sotish narx $ :";
+            // 
+            // summaSotish_txt
+            // 
+            this.summaSotish_txt.AcceptsReturn = false;
+            this.summaSotish_txt.AcceptsTab = false;
+            this.summaSotish_txt.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.summaSotish_txt.AnimationSpeed = 200;
+            this.summaSotish_txt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.summaSotish_txt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.summaSotish_txt.BackColor = System.Drawing.Color.Transparent;
+            this.summaSotish_txt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("summaSotish_txt.BackgroundImage")));
+            this.summaSotish_txt.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.summaSotish_txt.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.summaSotish_txt.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.summaSotish_txt.BorderColorIdle = System.Drawing.Color.Silver;
+            this.summaSotish_txt.BorderRadius = 10;
+            this.summaSotish_txt.BorderThickness = 0;
+            this.summaSotish_txt.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.summaSotish_txt.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.summaSotish_txt.DefaultFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.summaSotish_txt.DefaultText = "";
+            this.summaSotish_txt.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
+            this.summaSotish_txt.ForeColor = System.Drawing.Color.White;
+            this.summaSotish_txt.HideSelection = true;
+            this.summaSotish_txt.IconLeft = null;
+            this.summaSotish_txt.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.summaSotish_txt.IconPadding = 10;
+            this.summaSotish_txt.IconRight = null;
+            this.summaSotish_txt.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.summaSotish_txt.Lines = new string[0];
+            this.summaSotish_txt.Location = new System.Drawing.Point(567, 4);
+            this.summaSotish_txt.MaxLength = 32767;
+            this.summaSotish_txt.MinimumSize = new System.Drawing.Size(1, 1);
+            this.summaSotish_txt.Modified = false;
+            this.summaSotish_txt.Multiline = false;
+            this.summaSotish_txt.Name = "summaSotish_txt";
+            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties1.FillColor = System.Drawing.Color.Empty;
+            stateProperties1.ForeColor = System.Drawing.Color.Empty;
+            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.summaSotish_txt.OnActiveState = stateProperties1;
+            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.summaSotish_txt.OnDisabledState = stateProperties2;
+            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties3.FillColor = System.Drawing.Color.Empty;
+            stateProperties3.ForeColor = System.Drawing.Color.Empty;
+            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.summaSotish_txt.OnHoverState = stateProperties3;
+            stateProperties4.BorderColor = System.Drawing.Color.Silver;
+            stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
+            stateProperties4.ForeColor = System.Drawing.Color.White;
+            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.summaSotish_txt.OnIdleState = stateProperties4;
+            this.summaSotish_txt.Padding = new System.Windows.Forms.Padding(3);
+            this.summaSotish_txt.PasswordChar = '\0';
+            this.summaSotish_txt.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.summaSotish_txt.PlaceholderText = "Summa dollar";
+            this.summaSotish_txt.ReadOnly = false;
+            this.summaSotish_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.summaSotish_txt.SelectedText = "";
+            this.summaSotish_txt.SelectionLength = 0;
+            this.summaSotish_txt.SelectionStart = 0;
+            this.summaSotish_txt.ShortcutsEnabled = true;
+            this.summaSotish_txt.Size = new System.Drawing.Size(145, 32);
+            this.summaSotish_txt.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.summaSotish_txt.TabIndex = 2;
+            this.summaSotish_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.summaSotish_txt.TextMarginBottom = 0;
+            this.summaSotish_txt.TextMarginLeft = 3;
+            this.summaSotish_txt.TextMarginTop = 0;
+            this.summaSotish_txt.TextPlaceholder = "Summa dollar";
+            this.summaSotish_txt.UseSystemPasswordChar = false;
+            this.summaSotish_txt.WordWrap = true;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(33, 9);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(146, 20);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Summa tan narx $ :";
             // 
             // summaTanNarx_txt
             // 
@@ -892,16 +947,108 @@ namespace Warehouse.UserControls
             this.bunifuPanel3.BorderColor = System.Drawing.Color.Silver;
             this.bunifuPanel3.BorderRadius = 3;
             this.bunifuPanel3.BorderThickness = 1;
+            this.bunifuPanel3.Controls.Add(this.importExcel_btn);
             this.bunifuPanel3.Controls.Add(this.bunifuButton1);
             this.bunifuPanel3.Controls.Add(this.searchType_combobox);
             this.bunifuPanel3.Controls.Add(this.search_product_txt);
             this.bunifuPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bunifuPanel3.Location = new System.Drawing.Point(0, 80);
+            this.bunifuPanel3.Location = new System.Drawing.Point(0, 40);
             this.bunifuPanel3.Margin = new System.Windows.Forms.Padding(0);
             this.bunifuPanel3.Name = "bunifuPanel3";
             this.bunifuPanel3.ShowBorders = true;
             this.bunifuPanel3.Size = new System.Drawing.Size(1126, 40);
             this.bunifuPanel3.TabIndex = 3;
+            // 
+            // importExcel_btn
+            // 
+            this.importExcel_btn.AllowAnimations = true;
+            this.importExcel_btn.AllowMouseEffects = true;
+            this.importExcel_btn.AllowToggling = false;
+            this.importExcel_btn.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.importExcel_btn.AnimationSpeed = 200;
+            this.importExcel_btn.AutoGenerateColors = false;
+            this.importExcel_btn.AutoRoundBorders = false;
+            this.importExcel_btn.AutoSizeLeftIcon = true;
+            this.importExcel_btn.AutoSizeRightIcon = true;
+            this.importExcel_btn.BackColor = System.Drawing.Color.Transparent;
+            this.importExcel_btn.BackColor1 = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
+            this.importExcel_btn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("importExcel_btn.BackgroundImage")));
+            this.importExcel_btn.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.importExcel_btn.ButtonText = "ImportExcel";
+            this.importExcel_btn.ButtonTextMarginLeft = 0;
+            this.importExcel_btn.ColorContrastOnClick = 45;
+            this.importExcel_btn.ColorContrastOnHover = 45;
+            this.importExcel_btn.Cursor = System.Windows.Forms.Cursors.Default;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.importExcel_btn.CustomizableEdges = borderEdges6;
+            this.importExcel_btn.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.importExcel_btn.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.importExcel_btn.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.importExcel_btn.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.importExcel_btn.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.importExcel_btn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.importExcel_btn.ForeColor = System.Drawing.Color.White;
+            this.importExcel_btn.IconLeftAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.importExcel_btn.IconLeftCursor = System.Windows.Forms.Cursors.Default;
+            this.importExcel_btn.IconLeftPadding = new System.Windows.Forms.Padding(11, 3, 3, 3);
+            this.importExcel_btn.IconMarginLeft = 11;
+            this.importExcel_btn.IconPadding = 10;
+            this.importExcel_btn.IconRightAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.importExcel_btn.IconRightCursor = System.Windows.Forms.Cursors.Default;
+            this.importExcel_btn.IconRightPadding = new System.Windows.Forms.Padding(3, 3, 7, 3);
+            this.importExcel_btn.IconSize = 25;
+            this.importExcel_btn.IdleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
+            this.importExcel_btn.IdleBorderRadius = 10;
+            this.importExcel_btn.IdleBorderThickness = 1;
+            this.importExcel_btn.IdleFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
+            this.importExcel_btn.IdleIconLeftImage = null;
+            this.importExcel_btn.IdleIconRightImage = null;
+            this.importExcel_btn.IndicateFocus = false;
+            this.importExcel_btn.Location = new System.Drawing.Point(869, 4);
+            this.importExcel_btn.Name = "importExcel_btn";
+            this.importExcel_btn.OnDisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
+            this.importExcel_btn.OnDisabledState.BorderRadius = 10;
+            this.importExcel_btn.OnDisabledState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.importExcel_btn.OnDisabledState.BorderThickness = 1;
+            this.importExcel_btn.OnDisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.importExcel_btn.OnDisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.importExcel_btn.OnDisabledState.IconLeftImage = null;
+            this.importExcel_btn.OnDisabledState.IconRightImage = null;
+            this.importExcel_btn.onHoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.importExcel_btn.onHoverState.BorderRadius = 10;
+            this.importExcel_btn.onHoverState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.importExcel_btn.onHoverState.BorderThickness = 1;
+            this.importExcel_btn.onHoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.importExcel_btn.onHoverState.ForeColor = System.Drawing.Color.White;
+            this.importExcel_btn.onHoverState.IconLeftImage = null;
+            this.importExcel_btn.onHoverState.IconRightImage = null;
+            this.importExcel_btn.OnIdleState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
+            this.importExcel_btn.OnIdleState.BorderRadius = 10;
+            this.importExcel_btn.OnIdleState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.importExcel_btn.OnIdleState.BorderThickness = 1;
+            this.importExcel_btn.OnIdleState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
+            this.importExcel_btn.OnIdleState.ForeColor = System.Drawing.Color.White;
+            this.importExcel_btn.OnIdleState.IconLeftImage = null;
+            this.importExcel_btn.OnIdleState.IconRightImage = null;
+            this.importExcel_btn.OnPressedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.importExcel_btn.OnPressedState.BorderRadius = 10;
+            this.importExcel_btn.OnPressedState.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.importExcel_btn.OnPressedState.BorderThickness = 1;
+            this.importExcel_btn.OnPressedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(96)))), ((int)(((byte)(144)))));
+            this.importExcel_btn.OnPressedState.ForeColor = System.Drawing.Color.White;
+            this.importExcel_btn.OnPressedState.IconLeftImage = null;
+            this.importExcel_btn.OnPressedState.IconRightImage = null;
+            this.importExcel_btn.Size = new System.Drawing.Size(113, 30);
+            this.importExcel_btn.TabIndex = 3;
+            this.importExcel_btn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.importExcel_btn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center;
+            this.importExcel_btn.TextMarginLeft = 0;
+            this.importExcel_btn.TextPadding = new System.Windows.Forms.Padding(0);
+            this.importExcel_btn.UseDefaultRadiusAndThickness = true;
+            this.importExcel_btn.Click += new System.EventHandler(this.importExcel_btn_Click);
             // 
             // bunifuButton1
             // 
@@ -923,11 +1070,11 @@ namespace Warehouse.UserControls
             this.bunifuButton1.ColorContrastOnClick = 45;
             this.bunifuButton1.ColorContrastOnHover = 45;
             this.bunifuButton1.Cursor = System.Windows.Forms.Cursors.Default;
-            borderEdges6.BottomLeft = true;
-            borderEdges6.BottomRight = true;
-            borderEdges6.TopLeft = true;
-            borderEdges6.TopRight = true;
-            this.bunifuButton1.CustomizableEdges = borderEdges6;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.bunifuButton1.CustomizableEdges = borderEdges7;
             this.bunifuButton1.DialogResult = System.Windows.Forms.DialogResult.None;
             this.bunifuButton1.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(191)))), ((int)(((byte)(191)))));
             this.bunifuButton1.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
@@ -1117,106 +1264,6 @@ namespace Warehouse.UserControls
             this.search_product_txt.WordWrap = true;
             this.search_product_txt.TextChanged += new System.EventHandler(this.bunifuTextBox1_TextChanged);
             // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(33, 9);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(146, 20);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Summa tan narx $ :";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(394, 10);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(165, 20);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Summa sotish narx $ :";
-            // 
-            // summaSotish_txt
-            // 
-            this.summaSotish_txt.AcceptsReturn = false;
-            this.summaSotish_txt.AcceptsTab = false;
-            this.summaSotish_txt.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.summaSotish_txt.AnimationSpeed = 200;
-            this.summaSotish_txt.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.summaSotish_txt.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.summaSotish_txt.BackColor = System.Drawing.Color.Transparent;
-            this.summaSotish_txt.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("summaSotish_txt.BackgroundImage")));
-            this.summaSotish_txt.BorderColorActive = System.Drawing.Color.DodgerBlue;
-            this.summaSotish_txt.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.summaSotish_txt.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            this.summaSotish_txt.BorderColorIdle = System.Drawing.Color.Silver;
-            this.summaSotish_txt.BorderRadius = 10;
-            this.summaSotish_txt.BorderThickness = 0;
-            this.summaSotish_txt.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.summaSotish_txt.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.summaSotish_txt.DefaultFont = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.summaSotish_txt.DefaultText = "";
-            this.summaSotish_txt.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
-            this.summaSotish_txt.ForeColor = System.Drawing.Color.White;
-            this.summaSotish_txt.HideSelection = true;
-            this.summaSotish_txt.IconLeft = null;
-            this.summaSotish_txt.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
-            this.summaSotish_txt.IconPadding = 10;
-            this.summaSotish_txt.IconRight = null;
-            this.summaSotish_txt.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
-            this.summaSotish_txt.Lines = new string[0];
-            this.summaSotish_txt.Location = new System.Drawing.Point(567, 4);
-            this.summaSotish_txt.MaxLength = 32767;
-            this.summaSotish_txt.MinimumSize = new System.Drawing.Size(1, 1);
-            this.summaSotish_txt.Modified = false;
-            this.summaSotish_txt.Multiline = false;
-            this.summaSotish_txt.Name = "summaSotish_txt";
-            stateProperties1.BorderColor = System.Drawing.Color.DodgerBlue;
-            stateProperties1.FillColor = System.Drawing.Color.Empty;
-            stateProperties1.ForeColor = System.Drawing.Color.Empty;
-            stateProperties1.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.summaSotish_txt.OnActiveState = stateProperties1;
-            stateProperties2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            stateProperties2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            stateProperties2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            stateProperties2.PlaceholderForeColor = System.Drawing.Color.DarkGray;
-            this.summaSotish_txt.OnDisabledState = stateProperties2;
-            stateProperties3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
-            stateProperties3.FillColor = System.Drawing.Color.Empty;
-            stateProperties3.ForeColor = System.Drawing.Color.Empty;
-            stateProperties3.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.summaSotish_txt.OnHoverState = stateProperties3;
-            stateProperties4.BorderColor = System.Drawing.Color.Silver;
-            stateProperties4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(56)))), ((int)(((byte)(89)))));
-            stateProperties4.ForeColor = System.Drawing.Color.White;
-            stateProperties4.PlaceholderForeColor = System.Drawing.Color.Empty;
-            this.summaSotish_txt.OnIdleState = stateProperties4;
-            this.summaSotish_txt.Padding = new System.Windows.Forms.Padding(3);
-            this.summaSotish_txt.PasswordChar = '\0';
-            this.summaSotish_txt.PlaceholderForeColor = System.Drawing.Color.Silver;
-            this.summaSotish_txt.PlaceholderText = "Summa dollar";
-            this.summaSotish_txt.ReadOnly = false;
-            this.summaSotish_txt.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.summaSotish_txt.SelectedText = "";
-            this.summaSotish_txt.SelectionLength = 0;
-            this.summaSotish_txt.SelectionStart = 0;
-            this.summaSotish_txt.ShortcutsEnabled = true;
-            this.summaSotish_txt.Size = new System.Drawing.Size(145, 32);
-            this.summaSotish_txt.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
-            this.summaSotish_txt.TabIndex = 2;
-            this.summaSotish_txt.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.summaSotish_txt.TextMarginBottom = 0;
-            this.summaSotish_txt.TextMarginLeft = 3;
-            this.summaSotish_txt.TextMarginTop = 0;
-            this.summaSotish_txt.TextPlaceholder = "Summa dollar";
-            this.summaSotish_txt.UseSystemPasswordChar = false;
-            this.summaSotish_txt.WordWrap = true;
-            // 
             // MahsulotQabuliControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1230,8 +1277,6 @@ namespace Warehouse.UserControls
             ((System.ComponentModel.ISupportInitialize)(this.searchProdDataGrid)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.receiveDataGrid)).EndInit();
             this.bunifuPanel4.ResumeLayout(false);
-            this.bunifuPanel2.ResumeLayout(false);
-            this.bunifuPanel2.PerformLayout();
             this.bunifuPanel1.ResumeLayout(false);
             this.bunifuPanel1.PerformLayout();
             this.bunifuPanel3.ResumeLayout(false);
@@ -1254,14 +1299,12 @@ namespace Warehouse.UserControls
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton4;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton bunifuButton3;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton btnQabul;
-        private Bunifu.UI.WinForms.BunifuPanel bunifuPanel2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private Bunifu.UI.WinForms.BunifuPanel bunifuPanel5;
         private Bunifu.UI.WinForms.BunifuDataGridView searchProdDataGrid;
         private Bunifu.UI.WinForms.BunifuDataGridView receiveDataGrid;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private Bunifu.UI.WinForms.BunifuTextBox summaSotish_txt;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton importExcel_btn;
     }
 }

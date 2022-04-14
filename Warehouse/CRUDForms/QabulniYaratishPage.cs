@@ -9,6 +9,7 @@ namespace Warehouse.CRUDForms
     {
         ReceiveService receiveService = new ReceiveService();
         DeliverService deliverService = new DeliverService();
+        WaitForm waitForm = new WaitForm();
         ReceiveModel receiveModel { get; set; }
         ReceiveResponseModel receiveResponseModel { get; set; }
         public QabulniYaratishPage()
@@ -38,6 +39,7 @@ namespace Warehouse.CRUDForms
         {
             if (comboDeliver.Visible)
             {
+                waitForm.Show();
                 receiveModel = new ReceiveModel()
                 {
                     Name = txtRecieveName.Text,
@@ -84,6 +86,7 @@ namespace Warehouse.CRUDForms
             }
             Form1.ReceiveItemModel.Receive = receiveResponseModel.Id;
             Form1.Receive = receiveResponseModel;
+            waitForm.Close();
             this.Close();
         }
 

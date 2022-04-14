@@ -54,7 +54,8 @@ namespace Warehouse.API.APIServices
                     }
                     else
                     {
-                        throw new Exception("Did not get data properly");
+                        throw new Exception(response.ToString());
+                        
                     }
                 }
                 catch (Exception ex)

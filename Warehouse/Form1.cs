@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Windows.Forms;
 using Warehouse.API.API_Models;
 using Warehouse.API.APIServices;
@@ -17,9 +18,9 @@ namespace Warehouse
         public static ReceiveItemModel ReceiveItemModel = new ReceiveItemModel();
         public static ReceiveResponseModel Receive = new ReceiveResponseModel();
         public static FakturaCreateResponse Faktura = new FakturaCreateResponse();
-
         public static MenuService menuService = new MenuService();
         public static Panel mainPanelStatik;
+
         ProductListService productListService = new ProductListService();
         GroupService groupService = new GroupService();
         DeliverService deliverService = new DeliverService();
@@ -34,8 +35,8 @@ namespace Warehouse
 
         private async void Form1_Load(object sender, EventArgs e)
         {
-            menuService.showControl(main_panel, 1);
             waitForm.Show();
+            menuService.showControl(main_panel, 1);
             Products = await productListService.GetProducts();
             Groups = await groupService.GetGroups();
             Delivers = await deliverService.GetDelivers();
@@ -77,6 +78,23 @@ namespace Warehouse
         {
             Application.Exit();
 
+        }
+
+        private void maximize_btn_Click(object sender, EventArgs e)
+        {
+            if(this.WindowState == FormWindowState.Normal)
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+        }
+
+        private void minimize_btn_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

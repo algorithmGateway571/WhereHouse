@@ -63,11 +63,11 @@ namespace Warehouse.UserControls
             fakturaDataGrid.DataSource = fakturaItemViews;
             fakturaDataGrid.Columns["index"].HeaderText = "T/r";
             fakturaDataGrid.Columns["ProdName"].HeaderText = "Mahsulot";
-            fakturaDataGrid.Columns["ProdBarcode"].HeaderText = "Shtrix kod";
-            fakturaDataGrid.Columns["ProdGroup"].HeaderText = "Guruh";
             fakturaDataGrid.Columns["ProdPreparer"].HeaderText = "Preparer";
-            fakturaDataGrid.Columns["Dollar"].HeaderText = "Sotish narxi $";
+            fakturaDataGrid.Columns["ProdGroup"].HeaderText = "Guruh";
+            fakturaDataGrid.Columns["ProdBarcode"].HeaderText = "Shtrix kod";
             fakturaDataGrid.Columns["Body_dollar"].HeaderText = "Tan narxi $";
+            fakturaDataGrid.Columns["Dollar"].HeaderText = "Sotish narxi $";
             fakturaDataGrid.Columns["Quantity"].HeaderText = "Soni";
             
             fakturaDataGrid.Refresh();
@@ -78,7 +78,7 @@ namespace Warehouse.UserControls
             searchDataGrid.Visible = false;
             if (e.KeyCode == Keys.Enter)
             {
-                ProductStorageModel storageModel = Form1.Products.Where(a => a.Barcode.Contains(searchDataGrid.SelectedCells[4].Value.ToString())).FirstOrDefault();
+                ProductStorageModel storageModel = Form1.Products.Where(a => a.Barcode == (searchDataGrid.SelectedCells[4].Value.ToString()) && a.Quantity== double.Parse(searchDataGrid.SelectedCells[7].Value.ToString())).FirstOrDefault();
                 KorzinkaPage korzinkaPage = new KorzinkaPage();
                 korzinkaPage.FillKorzinka(this, storageModel);
                 korzinkaPage.ShowDialog();
@@ -207,8 +207,24 @@ namespace Warehouse.UserControls
 
         }
 
-        private void search_mahsulot_txt_TextChange(object sender, EventArgs e)
+        private void bunifuButton1_Click(object sender, EventArgs e)
         {
+            if (Form1.Faktura == null)
+            {
+                MessageBox.Show("Faktura yaratilmagan, Iltimos avval 'Yaratish' tugmasini bosing!", "Xabar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            ImportFromExcel import = new ImportFromExcel();
+            import.ImportFromExcelData(fakturaDataGrid, this);
+            
+        }
+
+        private void search_mahsulot_txt_TextChanged(object sender, EventArgs e)
+        {
+            if(search_mahsulot_txt.Text == "")
+            {
+                searchDataGrid.Visible = false;
+            }
             if (Form1.Faktura == null)
             {
                 MessageBox.Show("Faktura yaratilmagan, Iltimos avval 'Yaratish' tugmasini bosing!", "Xabar", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -52,7 +52,7 @@ namespace Warehouse.API.APIServices
         {
             try
             {
-                HttpResponseMessage response = await client.GetAsync("faktura?status=1");
+                HttpResponseMessage response = await client.GetAsync("faktura");
                 string code = response.StatusCode.ToString();
                 if (response.IsSuccessStatusCode)
                 {
@@ -69,6 +69,29 @@ namespace Warehouse.API.APIServices
                 throw new Exception(ex.Message);
             }
         }
+
+        public async Task<List<FakturaCreateResponse>> GetFakturas(int status)
+        {
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync($"faktura?status={status}");
+                string code = response.StatusCode.ToString();
+                if (response.IsSuccessStatusCode)
+                {
+                    List<FakturaCreateResponse> models = await response.Content.ReadAsAsync<List<FakturaCreateResponse>>();
+                    return models;
+                }
+                else
+                {
+                    throw new Exception("Did not get data prperly");
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public async Task<FakturaCreateResponse> ConfirmFaktura(int Id, string status)
         {
             Uri url = new Uri(StaticModels.BaseURL + $"faktura/{Id}/");

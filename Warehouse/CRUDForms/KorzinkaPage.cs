@@ -59,7 +59,7 @@ namespace Warehouse.CRUDForms
         {
             if(txtQuantity.Text != "")
             {
-                if (_storageModel.Quantity < double.Parse(txtQuantity.Text))
+               if (_storageModel.Quantity < double.Parse(txtQuantity.Text))
                 {
                     MessageBox.Show("Ombordagi qiymatdan ko'p kiritildi!", "Xabar!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

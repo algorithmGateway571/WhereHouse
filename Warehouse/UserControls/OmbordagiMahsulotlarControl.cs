@@ -57,7 +57,7 @@ namespace Warehouse.UserControls
         {
             if (e.KeyCode == Keys.Enter)
             {
-                string barcode = mahsulotDataGrid.SelectedCells[2].Value.ToString();
+                string barcode = mahsulotDataGrid.SelectedCells[3].Value.ToString();
                 string prodName = mahsulotDataGrid.SelectedCells[1].Value.ToString();
                 lblName.Text = prodName;
                 productBarCode_txt.Text = barcode;
@@ -120,7 +120,6 @@ namespace Warehouse.UserControls
 
         private void OmbordagiMahsulotlarControl_Load(object sender, EventArgs e)
         {
-            GetProductsList();
         }
 
         private async void GetProductsList()
@@ -129,6 +128,7 @@ namespace Warehouse.UserControls
             mahsulotDataGrid.DataSource = null;
             Form1.Products = await productListService.GetProducts();
             mahsulotDataGrid.DataSource = Form1.Products;
+            mahsulotDataGrid.Columns["Id"].Visible = false;
             mahsulotDataGrid.Refresh();
             waitForm.Close();
         }
@@ -168,6 +168,11 @@ namespace Warehouse.UserControls
         private void bunifuTextBox1_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
         {
 
+        }
+
+        private void Yangilash_btn_Click(object sender, EventArgs e)
+        {
+            GetProductsList();
         }
     }
 }
